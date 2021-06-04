@@ -59,7 +59,7 @@ header {
   
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('images/header.png');
+    url('../../static/images/header.png');
   background-size: cover;
   background-position: center center;
   background-blend-mode: darken;

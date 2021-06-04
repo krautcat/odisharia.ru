@@ -11,7 +11,7 @@
 <main>
   <div class="container grid grid-cols-2 auto-rows-auto gap-24">
     <div class="row-span-5">
-      <img class="photo" src="../static/images/image.png" alt="Gerogiy Odisharia"> 
+      <img class="photo" src="images/image.png" alt="Gerogiy Odisharia"> 
     </div>
     
     <div class="">
