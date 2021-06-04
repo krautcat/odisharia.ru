@@ -113,14 +113,14 @@
     <div class="mx-auto grid grid-rows-3 md:grid-cols-5">
       
       <div class="md:row-span-3 md:col-span-2 mx-auto justify-items-left">
-        <img src="../static/images/userpic.jpg" alt="Loius Vain cat, userpic of Georgiy Odisharia" class="userpic">
+        <img src="images/userpic.jpg" alt="Loius Vain cat, userpic of Georgiy Odisharia" class="userpic">
       </div>
       <div class="md:row-span-3 md:col-span-3 flex flex-wrap md:gap-8 gap-10 justify-center px-4 m-auto social-links">
 
           {#each social_links as social_link} 
           <div class="social-link social-link-{social_link.name}">
             <a href={social_link.link}>
-              <img class="social_link_icon" alt="{social_link.name} icon" src="../static/icons/social-links/{social_link.name}.svg">
+              <img class="social_link_icon" alt="{social_link.name} icon" src="icons/social-links/{social_link.name}.svg">
             </a>
           </div>
           {/each} 
