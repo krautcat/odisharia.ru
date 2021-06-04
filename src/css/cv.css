@@ -1,0 +1,5 @@
+@import 'main.css';
+
+main {
+  padding-top: var(--nav-content-height);
+}

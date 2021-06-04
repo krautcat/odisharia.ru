@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --userpic-size: 16rem;
+  --tw-bg-opacity: 1;
+}
+
+.nav-show {
+  transform: translateY(0%);
+}
+
+.nav-hide {
+  transform: translateY(-100%);
+}
+
 h1, h2 {
   text-align: center;
 } 
@@ -11,12 +24,20 @@ h1, h2 {
 }
 
 .userpic {
+  width: var(--userpic-size);
   text-align: center;
+  height: auto;
+  border-radius: 50%;
+}
+
+.photo {
+  border-radius: 5%;
 }
 
 .social_link_icon {
-  width: 1.8rem;
   margin: 0rem 0.5rem 0rem 0.5rem;
+  height: calc(var(--userpic-size) / 4 - 1rem);
+  width: calc(var(--userpic-size) / 4 - 1rem);
 }
 
 @layer base {
@@ -34,27 +55,44 @@ nav {
 }
 
 header {
+  height: 50vh;
+  
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('../images/header.png');
+    url('../static/images/header.png');
   background-size: cover;
   background-position: center center;
   background-blend-mode: darken;
 }
 
+header.lazy {
+   background-image: none;
+   background-color: #F1F1FA;
+}
+
 header .intro-text {
   width: 60%;
+  @apply h-1/2;
+
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  padding-top: 300px;
-  padding-bottom: 300px;
+  
+  @apply pt-40;
+  @apply pb-40;
 }
 
-@media (min-width: 640px) {
+@media (max-width: 640px) {
+  header {
+    height: 100vh;
+  }
+
   header .intro-text {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    align-items: center;
+  }
+
+  .socials, .aboutme {
+    @apply w-full;
   }
 }
 
