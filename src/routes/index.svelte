@@ -75,7 +75,7 @@
       My main professional area is embedded Linux and mobile devices.
     </p>
     <p class="pb-2">
-      Born in Yoshkar-Ola, respublic Mari El, I moved to Moscow when I was 18
+      Born in Yoshkar-Ola, Mari El republic, I moved to Moscow when I was 18
       to learn computer science in Bauman Moscow State Technical University.
 
       I graduated bachelor degree in computer science and then began to work in
