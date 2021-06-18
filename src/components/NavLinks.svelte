@@ -15,7 +15,7 @@
   let lastY = 0;
 
   function deriveClass(y, dy) {
-    if (y < offset) {
+    if (y <= offset) {
       return "nav-show";
     }
 

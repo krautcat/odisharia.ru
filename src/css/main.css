@@ -30,10 +30,6 @@ h1, h2 {
   border-radius: 50%;
 }
 
-.photo {
-  border-radius: 5%;
-}
-
 .social_link_icon {
   margin: 0rem 0.5rem 0rem 0.5rem;
   height: calc(var(--userpic-size) / 4 - 1rem);

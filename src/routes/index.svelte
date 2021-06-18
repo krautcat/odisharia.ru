@@ -75,7 +75,7 @@
       My main professional area is embedded Linux and mobile devices.
     </p>
     <p class="pb-2">
-      Born in Yoshkar-Ola, Mari El republic, I moved to Moscow when I was 18
+      Born in Yoshkar-Ola, republic of Mari El, I moved to Moscow when I was 18
       to learn computer science in Bauman Moscow State Technical University.
 
       I graduated bachelor degree in computer science and then began to work in
@@ -83,7 +83,7 @@
       Platform as junior software developer.
     </p>
     <p class="pb-2">
-      My hobbies was always unconventional. I am passionate to music, audiophile
+      My hobbies were always unconventional. I am passionate to music, audiophile
       stuff and keyboards.
     </p>
     <p class="pb-2">
@@ -116,7 +116,6 @@
         <img src="images/userpic.jpg" alt="Loius Vain cat, userpic of Georgiy Odisharia" class="userpic">
       </div>
       <div class="md:row-span-3 md:col-span-3 flex flex-wrap md:gap-8 gap-10 justify-center px-4 m-auto social-links">
-
           {#each social_links as social_link} 
           <div class="social-link social-link-{social_link.name}">
             <a href={social_link.link}>
