@@ -54,7 +54,7 @@
     </div>
     
     <div class="order-1 md:order-2 py-16 md:h-1/4 md:w-1/4">
-      <img class="mx-auto photo" src="images/image.png" alt="Gerogiy Odisharia"> 
+      <img class="mx-auto photo" src="images/image.webp" alt="Gerogiy Odisharia"> 
     </div>
   </div>
 </header>
