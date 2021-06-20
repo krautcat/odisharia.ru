@@ -49,4 +49,9 @@
     content: "— ";
     text-indent: -1.5rem;
   }
+
+  footer {
+    text-align: center;
+    border-top: 2px;
+  }
 }

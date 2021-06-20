@@ -1,7 +1,7 @@
 <script>
   let other_sites = [
     { link: "./cv", name: "CV" },
-    { link: "https://wishlist.odisharia.ru", name: "Wishlist" },
+    { link: "./wishlist", name: "Wishlist" },
   ]
 
   export let duration = "300ms";

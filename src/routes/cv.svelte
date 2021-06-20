@@ -3,7 +3,7 @@
 
   let social_links = [
     { name: "GitHub", link: "https://github.com/krautcat", icon: "github" },
-    { name: "LinkedIn", link: "https://linked.in/krautcat", icon: "linkedin" }
+    { name: "LinkedIn", link: "https://linkedin.com/in/krautcat ", icon: "linkedin" }
   ];
 
   let headerHeight = 0;
@@ -29,7 +29,7 @@
 <NavLinks />
 
 <header bind:clientHeight={headerHeight}>
-  <div class="flex flex-wrap justify-items-center md:justify-items-left mx-auto w-9/12 xl:w-8/12 md:h-1/4">
+  <div class="flex flex-wrap justify-items-center md:justify-items-left mx-auto w-10/12 xl:w-8/12 md:h-1/4">
     
     <div class="flex-grow my-auto order-2 md:order-1">
       <div class="font-black text-3xl">
@@ -92,7 +92,7 @@
           <h4>Junior embedded software developer</h4>
           <p>
             Developing smart speakers with Alice voice assistant. Adaptation of foreign devices to
-            the business-logic code. Maintanance and devopsing different tasks.
+            the business-logic code. Maintenance and devopsing different tasks.
           </p>
           <ul class="list-disc pl-8 dashed-list">
             <li>CI</li>
