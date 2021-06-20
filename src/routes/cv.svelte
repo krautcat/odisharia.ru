@@ -65,54 +65,65 @@
     <div>
       <h2>Experience</h2>
     
-      <div class="pb-4">    
-        <h3>Open Mobile Platform</h3>
-        <h4>November, 2020 — …</h4>
-        <p>
-          Working with adaptation of the different mobile devices to Aurora OS. Aurora OS is the
-          fork of Sailfish OS.
-        </p>
-        <ul class="list-disc pl-8">
-          <li>Sailfish build system</li>
-          <li>Bluez</li>
-          <li>systemd</li>
-          <li>pulseaudio</li>
-        </ul>
-      </div>
-      
-      <div class="pb-4">
-        <h3>Yandex</h3>
-        <h4>December, 2018 — June, 2020</h4>
-        <p>
-          Developing smart speakers with Alice voice assistant. Adaptation of foreign devices to
-          the business-logic code. Maintanance and devopsing different tasks.
-        </p>
-        <ul class="list-disc pl-8">
-          <li>CI</li>
-          <li>Android</li>
-          <li>Buildroot</li>
-          <li>Yocto Linux</li>
-        </ul>
-      </div>
-      
-      <div>
-        <h3>Samsung R&D Russia</h3>
-        <h4>July, 2017 — November 2018</h4>
-        <p>
-          Technical support of IoT Academy project. Writing code snippets for students, testing
-          hardware, flashing Artik boards.
-        </p>
-        <ul class="list-disc pl-8">
-          <li>MQTT</li>
-          <li>Tizen</li>
-          <li>LoRa</li>
-        </ul>
+      <div class="container grid grid-cols-1 md:grid-cols-3 auto-rows-auto gap-2">  
+        <div> 
+          <h3>Open Mobile Platform</h3>
+          <h4>November, 2020 — …</h4>
+        </div>
+        <div class="col-span-2">
+          <h4>Junior embedded software developer</h4>
+          <p>
+            Working with adaptation of the different mobile devices to Aurora OS. Aurora OS is the
+            fork of Sailfish OS.
+          </p>
+          <ul class="list-disc pl-8 dashed-list">
+            <li>Sailfish build system</li>
+            <li>Bluez</li>
+            <li>systemd</li>
+            <li>pulseaudio</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3>Yandex</h3>
+          <h4>December, 2018 — June, 2020</h4>
+        </div>
+        <div class="col-span-2">
+          <h4>Junior embedded software developer</h4>
+          <p>
+            Developing smart speakers with Alice voice assistant. Adaptation of foreign devices to
+            the business-logic code. Maintanance and devopsing different tasks.
+          </p>
+          <ul class="list-disc pl-8 dashed-list">
+            <li>CI</li>
+            <li>Android</li>
+            <li>Buildroot</li>
+            <li>Yocto Linux</li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3>Samsung R&D Russia</h3>
+          <h4>July, 2017 — November 2018</h4>
+        </div>
+        <div class="col-span-2">
+          <h4>Intern embedded software developer</h4>
+          <p>
+            Technical support of IoT Academy project. Writing code snippets for students, testing
+            hardware, flashing Artik boards.
+          </p>
+          <ul class="list-disc pl-8 dashed-list">
+            <li>MQTT</li>
+            <li>Tizen</li>
+            <li>LoRa</li>
+          </ul>
+        </div>
       </div>
     </div>
             
     <div>
       <h2>Skills</h2>
-      <div class="grid grid-cols-2 auto-rows-auto">
+      <div class="grid grid-cols-2 auto-cols-min">
         <div class="h-1/6">
           <h3>Programming languages</h3>
         </div>
@@ -120,7 +131,7 @@
           <h3>Technologies</h3>
         </div>
         <div>
-          <ul class="list-disc pl-8">
+          <ul class="list-disc pl-8 dashed-list">
             <li>C</li>
             <li>C++</li>
             <li>Python</li>
@@ -128,7 +139,7 @@
           </ul>    
         </div>
         <div>
-          <ul class="list-disc pl-8">
+          <ul class="list-disc pl-8 dashed-list">
             <li>Linux kernel</li>
             <li>U-boot</li>
             <li>Android</li>
@@ -141,7 +152,7 @@
             
     <div class="md:col-span-2 md:mx-auto">
       <h2 class="md:text-center">Contact</h2>
-      <p class="md:text-center">georgiy.odisharia at gmail.com</p>
+      <a href="mailto:georgiy.odisharia@gmail.com" class="md:text-center">georgiy.odisharia at gmail.com</a>
     </div>
   </div>
 
