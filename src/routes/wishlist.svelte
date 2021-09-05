@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import { apiData, wishlistEntries } from "./wishlist.js";
   import NavLinks from "../components/NavLinks.svelte";
   import Pagination from "../components/Pagination.svelte"; 
 
