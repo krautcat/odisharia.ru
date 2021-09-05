@@ -29,19 +29,19 @@
 <NavLinks />
 
 <header bind:clientHeight={headerHeight}>
-  <div class="flex flex-wrap justify-items-center md:justify-items-left mx-auto w-10/12 xl:w-8/12 md:h-1/4">
+  <div class="flex flex-wrap justify-items-center md:justify-items-left mx-auto w-1o/12 xl:w-7/12 md:h-1/4">
     
     <div class="flex-grow my-auto order-2 md:order-1">
-      <div class="font-black text-3xl">
+      <div class="font-black text-3xl text-center lg:text-left">
         Georgiy Odisharia
       </div>
-      <div class="mx-auto">
+      <div class="mx-auto text-center lg:text-left">
         Moscow, Russia
       </div>
-      <div>
+      <div class="text-center lg:text-left">
         Embedded Linux system developer.
       </div>
-      <div class="flex flex-wrap md:gap-2 gap-10 justify-left p-4 my-auto social-links">
+      <div class="flex flex-wrap md:gap-2 gap-10 justify-evenly md:justify-start p-4 my-auto social-links">
         {#each social_links as social_link}
           <div class="social-link social-link-{social_link.name}">
             <a href="{social_link.link}">
@@ -60,12 +60,12 @@
 </header>
 
 <main>
-  <div class="container grid grid-cols-1 auto-rows-auto md:grid-cols-2 xl:grid-rows-7 gap-8 w-9/12 md:w-8/12 mx-auto" bind:clientWidth={mainDivWidth}>
+  <div class="container grid grid-cols-1 auto-rows-auto lg:grid-cols-3 gap-8 w-10/12 xl:w-7/12 mx-auto" bind:clientWidth={mainDivWidth}>
         
-    <div>
+    <div class="lg:col-span-2">
       <h2>Experience</h2>
     
-      <div class="container grid grid-cols-1 md:grid-cols-3 auto-rows-auto gap-2">  
+      <div class="container grid grid-cols-1 lg:grid-cols-3 auto-rows-auto gap-x-1.5 gap-y-6">  
         <div> 
           <h3>Open Mobile Platform</h3>
           <h4>November, 2020 — …</h4>
@@ -121,7 +121,7 @@
       </div>
     </div>
             
-    <div>
+    <div class="lg:col-span-1">
       <h2>Skills</h2>
       <div class="grid grid-cols-2 auto-cols-min">
         <div class="h-1/6">
@@ -150,7 +150,7 @@
       </div>
     </div>
             
-    <div class="md:col-span-2 md:mx-auto">
+    <div class="lg:col-span-3 md:mx-auto">
       <h2 class="md:text-center">Contact</h2>
       <a href="mailto:georgiy.odisharia@gmail.com" class="md:text-center">georgiy.odisharia at gmail.com</a>
     </div>

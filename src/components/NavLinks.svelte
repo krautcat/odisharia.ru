@@ -5,7 +5,7 @@
   ]
 
   export let duration = "300ms";
-  export let offset = 0;
+  export let offset = 10;
   export let tolerance = 30;
 
   export let backgroundColor = "rgba(0, 0, 0, 0)";
