@@ -2,7 +2,7 @@
   import NavLinks from "../components/NavLinks.svelte";
 
   let social_links = [
-    { link: "https://twitter.com/krautcat", name: "twitter" },
+    { link: "https://twitter.com/ken__mode", name: "twitter" },
     { link: "https://vk.com/krautcat", name: "vk" },
     { link: "https://vk.com/ignorecam", name: "vk" },
     { link: "https://www.facebook.com/krautcat", name: "facebook" },
