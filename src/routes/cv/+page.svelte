@@ -1,5 +1,5 @@
 <script>
-  import NavLinks from "../components/NavLinks.svelte";
+  import NavLinks from "../../components/NavLinks.svelte";
 
   let social_links = [
     { name: "GitHub", link: "https://github.com/krautcat", icon: "github" },
