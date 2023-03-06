@@ -1,8 +1,8 @@
-FROM node:16-alpine
+FROM node:18-alpine
 
 WORKDIR /var/www/odisharia.ru
 
-COPY package*.json jsconfig.json svelte.config.js postcss.config.cjs tailwind.config.cjs ./
+COPY package*.json jsconfig.json svelte.config.js postcss.config.cjs tailwind.config.cjs vite.config.js ./
 
 RUN npm install --save
 
