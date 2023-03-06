@@ -19,6 +19,10 @@ h1, h2 {
   text-align: center;
 } 
 
+h3 {
+  text-align: center;
+}
+
 .other-sites {
   text-align: center;
 }
@@ -34,6 +38,14 @@ h1, h2 {
   margin: 0rem 0.5rem 0rem 0.5rem;
   height: calc(var(--userpic-size) / 4 - 1rem);
   width: calc(var(--userpic-size) / 4 - 1rem);
+}
+
+.e_music_link {
+  text-decoration:underline;
+}
+
+.e-music-public-image {
+  height: 100%;
 }
 
 @layer base {
@@ -55,7 +67,7 @@ header {
   
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('../../static/images/header.webp');
+    url('/images/header.webp');
   background-size: cover;
   background-position: center center;
   background-blend-mode: darken;

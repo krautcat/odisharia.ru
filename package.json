@@ -2,19 +2,21 @@
   "name": "~TODO~",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev --host",
+    "dev": "vite dev --host",
     "build": "vite build",
-    "preview": "svelte-kit preview --host"
+    "preview": "vite preview --host"
   },
   "devDependencies": {
-    "vite": "latest",
+    "vite": "^3.2.4j",
     "autoprefixer": "^10.2.5",
     "cssnano": "^5.0.1",
     "postcss": "^8.2.10",
     "postcss-load-config": "^3.0.1",
-    "svelte": "^3.34.0",
+    "svelte": "^3.54.0",
     "svelte-preprocess": "^4.7.1",
+    "svelte-check": "^2.9.2",
     "@sveltejs/kit": "latest",
+    "@sveltejs/adapter-node": "next",
     "tailwindcss": "^2.1.1"
   },
   "type": "module",

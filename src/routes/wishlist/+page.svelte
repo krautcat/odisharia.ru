@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
-  import NavLinks from "../components/NavLinks.svelte";
-  import Pagination from "../components/Pagination.svelte"; 
+  import NavLinks from "$lib/components/NavLinks.svelte";
+  import Pagination from "$lib/components/Pagination.svelte"; 
 
   let items = [];
   let page = 1; //first page
@@ -25,7 +25,7 @@
 </script>
 
 <style global lang="postcss">
-  @import '../css/wishlist.css';
+    @import '$lib/../css/wishlist.css';
 </style>
 
 <NavLinks />

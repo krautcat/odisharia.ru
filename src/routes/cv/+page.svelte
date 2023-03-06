@@ -1,5 +1,5 @@
 <script>
-  import NavLinks from "../../components/NavLinks.svelte";
+  import NavLinks from "$lib/components/NavLinks.svelte";
 
   let social_links = [
     { name: "GitHub", link: "https://github.com/krautcat", icon: "github" },
@@ -21,7 +21,7 @@
 </script>
 
 <style global lang="postcss">
-  @import '../css/cv.css';
+  @import '../../css/cv.css';
 </style>
 
 <svelte:window bind:innerWidth={screenWidth}/>
@@ -31,7 +31,11 @@
 <header bind:clientHeight={headerHeight}>
   <div class="flex flex-wrap justify-items-center md:justify-items-left mx-auto w-1o/12 xl:w-7/12 md:h-1/4">
     
-    <div class="flex-grow my-auto order-2 md:order-1">
+    <div class="order-1 md:order-1 py-16 md:h-1/4 md:w-1/4">
+      <img class="mx-auto photo" src="images/image.webp" alt="Gerogiy Odisharia"> 
+    </div>
+
+    <div class="flex-grow my-auto order-2 md:order-2 pl-8">
       <div class="font-black text-3xl text-center lg:text-left">
         Georgiy Odisharia
       </div>
@@ -41,7 +45,7 @@
       <div class="text-center lg:text-left">
         Embedded Linux system developer.
       </div>
-      <div class="flex flex-wrap md:gap-2 gap-10 justify-evenly md:justify-start p-4 my-auto social-links">
+      <div class="flex flex-wrap md:gap-2 gap-10 justify-evenly md:justify-start py-4 my-auto social-links">
         {#each social_links as social_link}
           <div class="social-link social-link-{social_link.name}">
             <a href="{social_link.link}">
@@ -51,10 +55,6 @@
         {/each}
       </div> 
     
-    </div>
-    
-    <div class="order-1 md:order-2 py-16 md:h-1/4 md:w-1/4">
-      <img class="mx-auto photo" src="images/image.webp" alt="Gerogiy Odisharia"> 
     </div>
   </div>
 </header>
@@ -68,7 +68,7 @@
       <div class="container grid grid-cols-1 lg:grid-cols-3 auto-rows-auto gap-x-1.5 gap-y-6">  
         <div> 
           <h3>Open Mobile Platform</h3>
-          <h4>November, 2020 — …</h4>
+          <h4>November, 2020 — December, 2021</h4>
         </div>
         <div class="col-span-2">
           <h4>Junior embedded software developer</h4>
@@ -157,6 +157,6 @@
   </div>
 
   <footer class="mx-auto py-4">
-    <p class="text-center">2021</p>
+    <p class="text-center">2023</p>
   </footer>
 </main>
