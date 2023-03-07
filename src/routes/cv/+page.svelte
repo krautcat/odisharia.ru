@@ -26,8 +26,6 @@
 
 <svelte:window bind:innerWidth={screenWidth}/>
 
-<NavLinks />
-
 <header bind:clientHeight={headerHeight}>
   <div class="flex flex-wrap justify-items-center md:justify-items-left mx-auto w-1o/12 xl:w-7/12 md:h-1/4">
     
@@ -66,6 +64,24 @@
       <h2>Experience</h2>
     
       <div class="container grid grid-cols-1 lg:grid-cols-3 auto-rows-auto gap-x-1.5 gap-y-6">  
+        <div> 
+          <h3>Edelweiss, LLC</h3>
+          <h4>December, 2021 — now</h4>
+        </div>
+        <div class="col-span-2">
+          <h4>Embedded software developer</h4>
+          <p>
+            Bringup of boards based on Baikal and Rockchip SoCs, modifying U-boot, UEFI (based
+            on EDK 2) and Linux kernel.
+          </p>
+          <ul class="list-disc pl-8 dashed-list">
+            <li>Linux kernel</li>
+            <li>U-boot</li>
+            <li>UEFI (EDK 2)</li>
+            <li>Build systems of vendors</li>
+          </ul>
+        </div>
+        
         <div> 
           <h3>Open Mobile Platform</h3>
           <h4>November, 2020 — December, 2021</h4>
@@ -142,8 +158,10 @@
           <ul class="list-disc pl-8 dashed-list">
             <li>Linux kernel</li>
             <li>U-boot</li>
-            <li>Android</li>
+            <li>UEFI (EDK 2)</li>
+            <li>Device Tree</li>
             <li>Buildroot</li>
+            <li>Android</li>
             <li>Sailfish OS</li>
           </ul>
         </div>

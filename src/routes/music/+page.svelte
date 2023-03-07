@@ -36,15 +36,46 @@
         aggressive screamo and emoviolence"
     }
   }
+
+  let y = 0;
+  let headerHeight = 0;
+  
+  let navLinksBackground = "rgba(0, 0, 0, 0)";
+  function updateNavLinksBackground(y) {
+    if (y > headerHeight) {
+      return "rgba(75, 85, 99, 255)";
+    } else {
+      return "rgba(0, 0, 0, 0)";
+    }
+  }
+
+  let navLinksTextColor = "#e5e7eb";
+  function updateNavLinksTextColor(y) {
+    if (y > headerHeight) {
+      return "#e5e7eb"; 
+    } else {
+      return "#e5e7eb";
+    }
+  }
+
+  let navLinksTextBackground = "rgba(0, 0, 0, 0)";
+  
+  $: {
+    navLinksBackground = updateNavLinksBackground(y);
+    navLinksTextColor = updateNavLinksTextColor(y);
+  } 
 </script>
 
 <style global lang="postcss">
   @import "$lib/../css/music.css";
 </style>
 
-<NavLinks />
+<svelte:window bind:scrollY={y}/>
 
-<header class="flex flex-col justify-center">
+<NavLinks backgroundColor={navLinksBackground} listItemsColor={navLinksTextColor}
+  backgroundListItemsColor={navLinksTextBackground}/>
+
+<header class="flex flex-col justify-center" bind:clientHeight={headerHeight}>
   <div class="container mx-auto">
     <div class="text-gray-200 intro-text flex flex-col gap-y-8">
       <div class="text-5xl uppercase">

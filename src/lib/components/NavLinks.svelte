@@ -7,11 +7,13 @@
     { link: "./wishlist", name: "Wishlist" },
   ]
 
-  export let duration = "300ms";
   export let offset = 10;
   export let tolerance = 30;
 
   export let backgroundColor = "rgba(0, 0, 0, 0)";
+  export let listItemsColor = "#e5e7eb";
+  export let backgroundListItemsColor = "rgba(0, 0, 0, 0)";
+  export let backgroundListItemsColorMobile = "rgba(75, 85, 99, 255)";
   export let headerHeight = 0;
 
   let headerClass = "nav-show";
@@ -55,13 +57,6 @@
     return deriveClass(y, dy);
   }
 
-  function setTransitionDuration(node) {
-    node.style.transitionDuration = duration;
-  }
-
-  // Mobile menu click event handler
-  const handleMobileIconClick = () => (showMobileMenu = !showMobileMenu);
-
   // Media match query handler
   const mediaQueryHandler = e => {
     // Reset mobile state
@@ -83,20 +78,24 @@
   export let onClick = () => {
     open = !open
     showMobileMenu = !showMobileMenu
+    backgroundListItemsColor = backgroundListItemsColorMobile;
   };
 
-  $: headerClass = updateClass(y);
+  $: {
+    headerClass = updateClass(y);
+  }
 </script>
 
 <svelte:window bind:scrollY={y} />
 
-<nav class="{headerClass} nav-content" style="background-color: {backgroundColor}, var(--tw-bg-opacity);">
+<nav class="{headerClass} nav-content" style="background-color: {backgroundColor} ;">
   <div class="navbar-inner">
     <AnimatedHamburger {open} {onClick}/>
-    <ul class:scrolled={headerClass} class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
+    <ul class:scrolled={headerClass} class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}
+      style="background-color: {backgroundListItemsColor}">
     {#each other_sites as site} 
       <li>        
-        <a href="{site.link}" class="block nav-link lg:inline-block hover:text-gray-300 lg:mt-0">
+        <a href="{site.link}" class="block nav-link lg:inline-block hover:text-gray-300 lg:mt-0" style="color={listItemsColor}">
           {site.name}
         </a>
       </li>
@@ -113,7 +112,7 @@
   nav {
     background-color: rgba(0, 0, 0, 0);
     font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-    height: 18vh;
+    height: 10vh;
     z-index: 3;
   }
 
@@ -134,86 +133,29 @@
     width: 100%;
   }
 
-  .mobile-icon {
-    width: 25px;
-    height: 14px;
-    position: relative;
-    cursor: pointer;
-    margin-left: 10pt;
-  }
-
-  .mobile-icon:after,
-  .mobile-icon:before,
-  .middle-line {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #Fff;
-    transition: all 0.4s;
-    transform-origin: center;
-  }
-
-  .mobile-icon:before,
-  .middle-line {
-    top: 0;
-  }
-
-  .mobile-icon:after,
-  .middle-line {
-    bottom: 0;
-  }
-
-  .mobile-icon:before {
-    width: 66%;
-  }
-
-  .mobile-icon:after {
-    width: 33%;
-  }
-
-  .middle-line {
-    margin: auto;
-  }
-
-  .mobile-icon:hover:before,
-  .mobile-icon:hover:after,
-  .mobile-icon.active:before,
-  .mobile-icon.active:after,
-  .mobile-icon.active .middle-line {
-    width: 100%;
-  }
-
-  .mobile-icon.active:before,
-  .mobile-icon.active:after {
-    top: 50%;
-    transform: rotate(-45deg);
-  }
-
-  .mobile-icon.active .middle-line {
-    transform: rotate(45deg);
-  }
-
   .navbar-list {
     @apply text-gray-200;
     display: none;
+    position: absolute;
     width: 100%;
     justify-content: space-between;
     margin: 0;
     padding: 3px;
+    top: 5vh;
   }
 
   .navbar-list.mobile {
-    background-color: gray;
     position: absolute;
     z-index: -1;
     width: 100%;
     padding: 1rem;
+    padding-top: 30px;
     padding-left: 5rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     align-items: right;
+    top: 0vh;
   }
 
   .navbar-list li {
@@ -235,6 +177,10 @@
   }
 
   @screen md {
+    nav {
+      height: 15vh;
+    }
+
     .nav-content {
       @apply fixed;
       @apply flex;

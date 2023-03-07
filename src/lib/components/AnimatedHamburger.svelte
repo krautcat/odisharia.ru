@@ -41,9 +41,11 @@
   button {
     cursor: pointer;
     display: flex;
+    position: absolute;
     align-items: center;
     overflow: hidden;
     z-index: 2;
+    top: 0vh;
   }
   svg {
     transition: transform var(--transition-duration);

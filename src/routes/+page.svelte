@@ -37,17 +37,30 @@
   let y = 0;
   let headerHeight = 0;
 
-  let navLinksBackground = "rgba(0, 0, 0, 0)"
-
+  let navLinksBackground = "rgba(0, 0, 0, 0)";
   function updateNavLinksBackground(y) {
     if (y > headerHeight) {
-      return "rgba(75, 85, 99, 0)";
+      return "rgba(75, 85, 99, 255)";
     } else {
       return "rgba(0, 0, 0, 0)";
     }
   }
 
-  $: navLinksBackground = updateNavLinksBackground(y);
+  let navLinksTextColor = "#e5e7eb";
+  function updateNavLinksTextColor(y) {
+    if (y > headerHeight) {
+      return "#e5e7eb"; 
+    } else {
+      return "#e5e7eb";
+    }
+  }
+
+  let navLinksTextBackground = "rgba(0, 0, 0, 0)";
+  
+  $: {
+    navLinksBackground = updateNavLinksBackground(y);
+    navLinksTextColor = updateNavLinksTextColor(y);
+  } 
 </script>
 
 <style global lang="postcss">
@@ -56,7 +69,8 @@
 
 <svelte:window bind:scrollY={y}/>
 
-<NavLinks backgroundColor={navLinksBackground} headerHeight={headerHeight}/>
+<NavLinks backgroundColor={navLinksBackground} listItemsColor={navLinksTextColor}
+  backgroundListItemsColor={navLinksTextBackground} headerHeight={headerHeight}/>
 
 <header class="flex flex-col justify-center" bind:clientHeight={headerHeight}>
   <div class="container mx-auto">
