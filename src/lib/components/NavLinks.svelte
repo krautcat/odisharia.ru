@@ -113,6 +113,7 @@
     background-color: rgba(0, 0, 0, 0);
     font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     height: 10vh;
+    padding: 0 0 0 0;
     z-index: 3;
   }
 
@@ -149,7 +150,7 @@
     z-index: -1;
     width: 100%;
     padding: 1rem;
-    padding-top: 30px;
+    padding-top: 20px;
     padding-left: 5rem;
     display: flex;
     flex-direction: column;
@@ -165,8 +166,8 @@
     display: inline;
     align-items: center;
     padding: 0;
-    
-    font-size: 15pt;
+   
+    font-size: 25pt;
   }
 
   .nav-content {
@@ -204,6 +205,10 @@
       position: center;
       padding: 0;
       @apply justify-center;
+    }
+
+    .navbar-list li {
+      font-size: 15pt;
     }
 
     .navbar-list a {

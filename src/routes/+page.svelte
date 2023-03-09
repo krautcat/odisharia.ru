@@ -63,10 +63,6 @@
   } 
 </script>
 
-<style global lang="postcss">
-    @import '../css/main.css';
-</style>
-
 <svelte:window bind:scrollY={y}/>
 
 <NavLinks backgroundColor={navLinksBackground} listItemsColor={navLinksTextColor}
@@ -74,7 +70,7 @@
 
 <header class="flex flex-col justify-center" bind:clientHeight={headerHeight}>
   <div class="container mx-auto">
-    <div class="text-gray-200 intro-text flex flex-col gap-y-8">
+    <div class="intro-text text-gray-200 flex flex-col gap-y-8">
       <div class="text-5xl uppercase">
         Georgiy Odisharia
       </div>
@@ -170,3 +166,117 @@
   </div>
 
 </main>
+
+<style global lang="postcss">
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  :root {
+    --userpic-size: 16rem;
+    --tw-bg-opacity: 1;
+  }
+
+  .nav-show {
+    transform: translateY(0%);
+  }
+
+  .nav-hide {
+    transform: translateY(-100%);
+  }
+
+  h1, h2 {
+    text-align: center;
+  } 
+
+  h3 {
+    text-align: center;
+  }
+
+  .other-sites {
+    text-align: center;
+  }
+
+  .userpic {
+    width: var(--userpic-size);
+    text-align: center;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .social_link_icon {
+    margin: 0rem 0.5rem 0rem 0.5rem;
+    height: calc(var(--userpic-size) / 4 - 1rem);
+    width: calc(var(--userpic-size) / 4 - 1rem);
+  }
+
+  .e_music_link {
+    text-decoration:underline;
+  }
+
+  .e-music-public-image {
+    height: 100%;
+  }
+
+  @layer base {
+    a.nav-link {
+      @apply text-gray-200;
+    }
+    
+    a.nav-link:visited  {
+      @apply text-gray-200;
+    }
+  }
+    
+  nav {
+    padding: 0 0 0 0;
+  }
+
+  header {
+    height: 50vh;
+    
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('/images/header.webp');
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: darken;
+  }
+
+  header.lazy {
+     background-image: none;
+     background-color: #F1F1FA;
+  }
+
+  header .intro-text {
+    width: 60%;
+    @apply h-1/2;
+
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    
+    @apply pt-40;
+    @apply pb-40;
+  }
+
+  @media (max-width: 640px) {
+    header {
+      height: 100vh;
+    }
+
+    header .intro-text {
+      align-items: center;
+    }
+
+    .socials, .aboutme {
+      @apply w-full;
+    }
+  }
+
+  footer {
+    text-align: center;
+    border-top: 2px;
+  }
+</style>
+

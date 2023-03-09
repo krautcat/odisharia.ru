@@ -66,10 +66,6 @@
   } 
 </script>
 
-<style global lang="postcss">
-  @import "$lib/../css/music.css";
-</style>
-
 <svelte:window bind:scrollY={y}/>
 
 <NavLinks backgroundColor={navLinksBackground} listItemsColor={navLinksTextColor}
@@ -86,7 +82,7 @@
 </header>
 
 <main>
-  <div class="music container w-1/2 mx-auto my-8">
+  <div class="music container w-5/6 lg:w-1/2 mx-auto my-8">
     <h1 class="text-3xl text-center">
       E:\music
     </h1>
@@ -106,11 +102,11 @@
       </div>
       <div class="col-span-2">
         <a href={e_music_public.link}>
-          <h2 class="text-1.5xl e-music-public-icon-text md:pt-3.5">
+          <h2 class="text-1.5xl underline e-music-public-icon-text md:pt-3.5">
             {e_music_public.name}
           </h2>
         </a>
-        <h3 class="py-2 underline">
+        <h3 class="py-2">
           {e_music_public.time}
         </h3>
         <p>
@@ -121,3 +117,60 @@
     {/each} 
   </div> 
 </main>
+
+<style global lang="postcss">
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  header {
+      height: 50vh;
+      
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('/images/vinyl.webp');
+      background-size: cover;
+      background-position: center center;
+      background-blend-mode: darken;
+  }
+
+  header .intro-text {
+      width: 60%;
+      @apply h-1/2;
+    
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      
+      @apply pt-40;
+      @apply pb-40;
+  }  
+
+  .e-music-public-icon-text {
+      text-align: left;
+      position: relative;
+      bottom: 0;
+  }
+
+  .e_music_public_icon {
+      position: relative;
+      float: right;
+      height: auto;
+      width: 10vw;
+  }
+
+  @media (max-width: 640px) {
+    .e_music_public_icon {
+      float: left;
+      width: 100%;
+    }
+    
+    header {
+      height: 100vh;
+    }
+
+    header .intro-text {
+      align-items: center;
+    }
+  }
+</style>

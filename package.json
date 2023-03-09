@@ -7,21 +7,20 @@
     "preview": "vite preview --host"
   },
   "devDependencies": {
-    "vite": "^4.0.0",
+    "@sveltejs/adapter-node": "next",
+    "@sveltejs/kit": "latest",
     "autoprefixer": "^10.2.5",
     "cssnano": "^5.0.1",
     "postcss": "^8.2.10",
     "postcss-load-config": "^3.0.1",
     "svelte": "latest",
-    "svelte-preprocess": "latest",
     "svelte-check": "^2.9.2",
-    "@sveltejs/kit": "latest",
-    "@sveltejs/adapter-node": "next",
-    "tailwindcss": "^2.1.1"
+    "svelte-preprocess": "latest",
+    "tailwindcss": "^2.1.1",
+    "vite": "^4.0.0"
   },
   "type": "module",
   "dependencies": {
-    "@sveltejs/adapter-node": "next",
-    "unit-http": "1.29.1"
+    "@sveltejs/adapter-node": "next"
   }
 }
