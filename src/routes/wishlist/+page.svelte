@@ -14,7 +14,7 @@
   let headerHeight = 0;
 
   onMount(async () => {
-    fetch(`http://api.odisharia.ru/wishlist?page=${page}`, {
+    fetch(`https://api.odisharia.ru/wishlist?page=${page}`, {
       })
       .then((response) => {
         return response.json();
@@ -30,7 +30,7 @@
   function changePage(params) {
     loading = true;
     current_page = params.page
-    fetch(`http://api.odisharia.ru/wishlist?page=${current_page}`)
+    fetch(`https://api.odisharia.ru/wishlist?page=${current_page}`)
       .then((response) => {
         return response.json();
       })

@@ -1,6 +1,4 @@
 <script>
-  import NavLinks from "$lib/components/NavLinks.svelte";
-
   let social_links = [
     { name: "GitHub", link: "https://github.com/krautcat", icon: "github" },
     { name: "LinkedIn", link: "https://linkedin.com/in/krautcat ", icon: "linkedin" }
@@ -19,10 +17,6 @@
     return (screenWidth - mainDivWidth) / 2; 
   }
 </script>
-
-<style global lang="postcss">
-  @import '../../css/cv.css';
-</style>
 
 <svelte:window bind:innerWidth={screenWidth}/>
 
@@ -178,3 +172,61 @@
     <p class="text-center">2023</p>
   </footer>
 </main>
+
+<style lang="postcss">
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  header {
+    background-image: none;
+  }
+
+  main {
+    @apply bg-gray-300;
+  }
+
+  h2 {
+    @apply font-bold;
+    @apply text-3xl;
+    @apply py-4;
+  }
+
+  h3 {
+    @apply font-semibold;
+  }
+
+  h4 {
+    @apply font-medium;
+  }
+
+  .social_link_icon {
+    margin: 0rem 0.5rem 0rem 0.5rem;
+    height: 2rem;
+    width: 2rem;
+  }
+
+  .photo {
+    border-radius: 50%;
+    height: auto;
+    width: auto;
+  }
+
+  ul.dashed-list {
+    list-style-type: none;
+  }
+
+  ul.dashed-list > li {
+    text-indent: -1.5rem;
+  }
+
+  ul.dashed-list > li:before {
+    content: "— ";
+    text-indent: -1.5rem;
+  }
+
+  footer {
+    text-align: center;
+    border-top: 2px;
+  }
+</style>
