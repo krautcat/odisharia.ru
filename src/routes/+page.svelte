@@ -63,6 +63,10 @@
   } 
 </script>
 
+<style global lang="postcss">
+  @import "../css/main.css";
+</style>
+
 <svelte:window bind:scrollY={y}/>
 
 <NavLinks backgroundColor={navLinksBackground} listItemsColor={navLinksTextColor}
@@ -94,7 +98,7 @@
           to learn computer science in Bauman Moscow State Technical University.
 
           I graduated bachelor degree in computer science and then began to work in
-          Samsung R&D Research Russia as intern developer. Worked in Yandex and Open
+          Samsung R&amp;D Research Russia as intern developer. Worked in Yandex and Open
           Mobile Platform. Currently employed in Edelweiss LLC as embedded software
           developer.
         </p>
@@ -104,10 +108,10 @@
         </p>
       </div>
 
-    <a href="./music">
-      <h3 class="text-2xl p-2 underline">Music</h3>
-    </a>  
-    <div class="pb0-4">
+    <h3 class="text-2xl p-2 underline">
+      <a href="./music">Music</a>
+    </h3>  
+    <div class="pb-4">
       <p class="pb-2">
         In the internet I am famous as admin of some public pages on VK platform.
         Currently, I write about music on 
@@ -140,7 +144,7 @@
     </div>
   </div>
 
-  <div class="container socials w-3/5 mx-auto p-6">
+  <div class="container socials w-5/6 md:w-1/2 mx-auto p-6">
     <h2 class="text-2xl pb-3">Me on the internet</h2>
     <div class="mx-auto grid grid-rows-3 md:grid-cols-5">
       
@@ -161,122 +165,8 @@
 
     <!-- And finally, your cool footer -->
     <footer>
-      <p>2021</p>
+      <p>2023</p>
     </footer>
   </div>
 
 </main>
-
-<style global lang="postcss">
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
-  :root {
-    --userpic-size: 16rem;
-    --tw-bg-opacity: 1;
-  }
-
-  .nav-show {
-    transform: translateY(0%);
-  }
-
-  .nav-hide {
-    transform: translateY(-100%);
-  }
-
-  h1, h2 {
-    text-align: center;
-  } 
-
-  h3 {
-    text-align: center;
-  }
-
-  .other-sites {
-    text-align: center;
-  }
-
-  .userpic {
-    width: var(--userpic-size);
-    text-align: center;
-    height: auto;
-    border-radius: 50%;
-  }
-
-  .social_link_icon {
-    margin: 0rem 0.5rem 0rem 0.5rem;
-    height: calc(var(--userpic-size) / 4 - 1rem);
-    width: calc(var(--userpic-size) / 4 - 1rem);
-  }
-
-  .e_music_link {
-    text-decoration:underline;
-  }
-
-  .e-music-public-image {
-    height: 100%;
-  }
-
-  @layer base {
-    a.nav-link {
-      @apply text-gray-200;
-    }
-    
-    a.nav-link:visited  {
-      @apply text-gray-200;
-    }
-  }
-    
-  nav {
-    padding: 0 0 0 0;
-  }
-
-  header {
-    height: 50vh;
-    
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url('/images/header.webp');
-    background-size: cover;
-    background-position: center center;
-    background-blend-mode: darken;
-  }
-
-  header.lazy {
-     background-image: none;
-     background-color: #F1F1FA;
-  }
-
-  header .intro-text {
-    width: 60%;
-    @apply h-1/2;
-
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    
-    @apply pt-40;
-    @apply pb-40;
-  }
-
-  @media (max-width: 640px) {
-    header {
-      height: 100vh;
-    }
-
-    header .intro-text {
-      align-items: center;
-    }
-
-    .socials, .aboutme {
-      @apply w-full;
-    }
-  }
-
-  footer {
-    text-align: center;
-    border-top: 2px;
-  }
-</style>
-

@@ -3,8 +3,8 @@
   import AnimatedHamburger from "./AnimatedHamburger.svelte";
 
   let other_sites = [
-    { link: "./cv", name: "CV" },
-    { link: "./wishlist", name: "Wishlist" },
+    { link: "https://odisharia.ru/cv", name: "CV" },
+    { link: "https://odisharia.ru/wishlist", name: "Wishlist" },
   ]
 
   export let offset = 10;
@@ -93,13 +93,13 @@
     <AnimatedHamburger {open} {onClick}/>
     <ul class:scrolled={headerClass} class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}
       style="background-color: {backgroundListItemsColor}">
-    {#each other_sites as site} 
-      <li>        
-        <a href="{site.link}" class="block nav-link lg:inline-block hover:text-gray-300 lg:mt-0" style="color={listItemsColor}">
-          {site.name}
-        </a>
-      </li>
-    {/each}
+      {#each other_sites as site} 
+        <li>        
+          <a href="{site.link}" class="block nav-link lg:inline-block hover:text-gray-300 lg:mt-0" style="color={listItemsColor}">
+            {site.name}
+          </a>
+        </li>
+      {/each}
     </ul>
   </div>
 </nav>  
@@ -147,7 +147,7 @@
 
   .navbar-list.mobile {
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     width: 100%;
     padding: 1rem;
     padding-top: 20px;
@@ -171,10 +171,10 @@
   }
 
   .nav-content {
-      @apply fixed;
-      @apply items-center;
-      @apply justify-center;
-      @apply w-screen;
+    @apply fixed;
+    @apply items-center;
+    @apply justify-center;
+    @apply w-screen;
   }
 
   @screen md {

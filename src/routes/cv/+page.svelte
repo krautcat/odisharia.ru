@@ -18,16 +18,20 @@
   }
 </script>
 
+<style lang="postcss">
+  @import "../../css/cv.css";
+</style>
+
 <svelte:window bind:innerWidth={screenWidth}/>
 
 <header bind:clientHeight={headerHeight}>
   <div class="flex flex-wrap justify-items-center md:justify-items-left mx-auto w-1o/12 xl:w-7/12 md:h-1/4">
     
-    <div class="order-1 md:order-1 py-16 md:h-1/4 md:w-1/4">
+    <div class="order-1 md:order-1 py-16 md:h-1/4 md:w-1/4 mx-auto">
       <img class="mx-auto photo" src="images/image.webp" alt="Gerogiy Odisharia"> 
     </div>
 
-    <div class="flex-grow my-auto order-2 md:order-2 pl-8">
+    <div class="flex-grow my-auto order-2 md:order-2 md:pl-8 mx-auto">
       <div class="font-black text-3xl text-center lg:text-left">
         Georgiy Odisharia
       </div>
@@ -172,61 +176,3 @@
     <p class="text-center">2023</p>
   </footer>
 </main>
-
-<style lang="postcss">
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-
-  header {
-    background-image: none;
-  }
-
-  main {
-    @apply bg-gray-300;
-  }
-
-  h2 {
-    @apply font-bold;
-    @apply text-3xl;
-    @apply py-4;
-  }
-
-  h3 {
-    @apply font-semibold;
-  }
-
-  h4 {
-    @apply font-medium;
-  }
-
-  .social_link_icon {
-    margin: 0rem 0.5rem 0rem 0.5rem;
-    height: 2rem;
-    width: 2rem;
-  }
-
-  .photo {
-    border-radius: 50%;
-    height: auto;
-    width: auto;
-  }
-
-  ul.dashed-list {
-    list-style-type: none;
-  }
-
-  ul.dashed-list > li {
-    text-indent: -1.5rem;
-  }
-
-  ul.dashed-list > li:before {
-    content: "— ";
-    text-indent: -1.5rem;
-  }
-
-  footer {
-    text-align: center;
-    border-top: 2px;
-  }
-</style>

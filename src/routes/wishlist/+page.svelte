@@ -77,6 +77,10 @@
   } 
 </script>
 
+<style global lang="postcss">
+  @import "../../css/wishlist.css";
+</style>
+
 <svelte:window bind:scrollY={y}/>
 
 <NavLinks backgroundColor={navLinksBackground} listItemsColor={navLinksTextColor}
@@ -117,102 +121,3 @@
       on:change="{(ev) => changePage({page: ev.detail})}"/>
   {/if}
 </main>
-
-<style global lang="postcss">
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
- 
-  header {
-    height: 50vh;
-    background-image: none;
-    @apply bg-gray-800;
-  }
-  
-  header .intro-text {
-    width: 60%;
-    @apply h-1/2;
-
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    
-    @apply pt-40;
-    @apply pb-40;
-  }
-  
-  main {
-    @apply bg-gray-300;
-  }
-
-  h1 {
-    @apply font-bold;
-    @apply text-4xl;
-    @apply py-4;
-  }
-
-  h2 {
-    @apply font-bold;
-    @apply text-3xl;
-    @apply py-4;
-  }
-
-  h3 {
-    @apply font-semibold;
-    @apply py-3;
-  }
-
-  h4 {
-    @apply font-medium;
-  }
-
-  @layer base {
-    main {
-      @apply bg-gray-300;
-    }
-
-    h2 {
-      @apply font-bold;
-      @apply text-3xl;
-      @apply py-4;
-    }
-
-    h3 {
-      @apply font-semibold;
-    }
-
-    h4 {
-      @apply font-medium;
-    }
-
-    .social_link_icon {
-      margin: 0rem 0.5rem 0rem 0.5rem;
-      height: 2rem;
-      width: 2rem;
-    }
-
-    .photo {
-      border-radius: 50%;
-      height: auto;
-      width: auto;
-    }
-
-    ul.dashed-list {
-      list-style-type: none;
-    }
-
-    ul.dashed-list > li {
-      text-indent: -1.5rem;
-    }
-
-    ul.dashed-list > li:before {
-      content: "— ";
-      text-indent: -1.5rem;
-    }
-
-    footer {
-      text-align: center;
-      border-top: 2px;
-    }
-  }
-</style>
