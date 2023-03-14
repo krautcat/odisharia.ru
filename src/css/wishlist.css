@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 header {
   height: 50vh;
   background-image: none;
@@ -51,20 +56,6 @@ h4 {
     @apply bg-gray-300;
   }
 
-  h2 {
-    @apply font-bold;
-    @apply text-3xl;
-    @apply py-4;
-  }
-
-  h3 {
-    @apply font-semibold;
-  }
-
-  h4 {
-    @apply font-medium;
-  }
-
   .social_link_icon {
     margin: 0rem 0.5rem 0rem 0.5rem;
     height: 2rem;
@@ -82,16 +73,48 @@ h4 {
   }
 
   ul.dashed-list > li {
-    text-indent: -1.5rem;
+    @apply text-base;
   }
 
   ul.dashed-list > li:before {
     content: "— ";
-    text-indent: -1.5rem;
+    text-indent: 1rem;
   }
 
   footer {
     text-align: center;
     border-top: 2px;
   }
+}
+
+.spinner {
+  display: flex;
+  min-height: 50vh;
+}
+
+.spinner-central {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex: 1 1 auto;
+}
+
+.flex-box {
+  display: flex;
+  flex-flow: column;
+}
+
+.flex-container {
+  margin: 1rem auto auto auto;
+  flex: 0 1 auto;
+}
+
+.flex-filler {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.flex-pagination {
+  flex: 0 1 auto;
 }
