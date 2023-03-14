@@ -76,7 +76,12 @@
   }
  
   let spinnerColor = "rgb(17 24 39)";
- 
+
+  let fillerVisibility;
+  view.subscribe((data) => {
+    fillerVisibility = data.fillerVisible;
+  });
+
   $: {
     navLinksBackground = updateNavLinksBackground(y);
     navLinksTextColor = updateNavLinksTextColor(y);
@@ -130,7 +135,9 @@
   </section>
 
   <div class="flex-filler" > 
-    <Filler />
+    <Filler
+      filler="· · ·"
+      bind:fillerVisibility/>
   </div> 
  
   <div class="flex-pagination"> 
