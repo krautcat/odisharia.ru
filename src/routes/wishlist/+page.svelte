@@ -137,7 +137,7 @@
   <div class="flex-filler" > 
     <Filler
       filler="· · ·"
-      bind:fillerVisibility/>
+      bind:fillerVisibility={fillerVisibility}/>
   </div> 
  
   <div class="flex-pagination"> 

@@ -51,44 +51,26 @@ h4 {
   @apply font-medium;
 }
 
-@layer base {
-  main {
-    @apply bg-gray-300;
-  }
+ul.dashed-list {
+  list-style-type: none;
+}
 
-  .social_link_icon {
-    margin: 0rem 0.5rem 0rem 0.5rem;
-    height: 2rem;
-    width: 2rem;
-  }
+ul.dashed-list > li {
+  @apply text-base;
+}
 
-  .photo {
-    border-radius: 50%;
-    height: auto;
-    width: auto;
-  }
+ul.dashed-list > li:before {
+  content: "— ";
+  text-indent: 1rem;
+}
 
-  ul.dashed-list {
-    list-style-type: none;
-  }
+ul.dashed-list > li:last-child {
+  @apply pb-3;
+}
 
-  ul.dashed-list > li {
-    @apply text-base;
-  }
-
-  ul.dashed-list > li:before {
-    content: "— ";
-    text-indent: 1rem;
-  }
-
-  ul.dashed-list > li:last-child {
-    @apply pb-3;
-  }
-
-  footer {
-    text-align: center;
-    border-top: 2px;
-  }
+footer {
+  text-align: center;
+  border-top: 2px;
 }
 
 .spinner {
