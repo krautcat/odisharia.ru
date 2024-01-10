@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="15"
+   height="30"
+   fill="none"
+   version="1.1"
+   id="svg200"
+   sodipodi:docname="regular.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs204" />
+  <sodipodi:namedview
+     id="namedview202"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="true"
+     inkscape:zoom="16"
+     inkscape:cx="-19.15625"
+     inkscape:cy="10.03125"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg200"
+     showguides="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3337" />
+    <sodipodi:guide
+       position="0.44,27.956019"
+       orientation="-1,0"
+       id="guide3339"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+    <sodipodi:guide
+       position="14.56,22.390625"
+       orientation="-1,0"
+       id="guide3341"
+       inkscape:locked="false"
+       inkscape:label=""
+       inkscape:color="rgb(0,134,229)" />
+  </sodipodi:namedview>
+  <style
+     id="style192">        .switch-spring-body,
+        .switch-spring-ends {
+            stroke: #BC960A;
+        }</style>
+  <path
+     d="M 2,27.929 C 2.9399696,27.65848 5.4907114,27.456507 7.677,26.967 9.84,26.483 13,25.498 13,25.498 c 1.770613,-0.448442 0.972943,-0.402463 0,-0.507 0,0 -3.489,-0.472 -5.677,-0.962 C 5.16,23.546 2,22.561 2,22.561 0.99737615,22.262566 0.23463767,22.282396 2,22.054 c 0,0 3.489,-0.472 5.677,-0.962 C 9.84,20.61 13,19.624 13,19.624 c 1.06498,-0.258157 1.679735,-0.366422 0,-0.507 0,0 -3.489,-0.472 -5.677,-0.962 C 5.16,17.671 2,16.686 2,16.686 0.76518018,16.366512 0.44471458,16.403244 2,16.18 2,16.18 5.489,15.707 7.677,15.218 9.84,14.734 13,13.749 13,13.749 c 1.141874,-0.374101 1.631458,-0.360508 0,-0.507 0,0 -3.489,-0.472 -5.677,-0.962 C 5.16,11.797 2,10.813 2,10.813 0.96842213,10.45775 0.27246954,10.522592 2,10.306 2,10.306 5.489,9.834 7.677,9.344 9.84,8.86 13,7.875 13,7.875 14.127217,7.5117682 14.635943,7.5501004 13,7.368 13,7.368 9.511,6.896 7.323,6.406 5.16,5.922 2,4.937 2,4.937 0.80633285,4.6097928 0.40862631,4.6128585 2,4.43 2,4.43 5.489,3.958 7.677,3.469 9.8400554,2.984998 16.022413,1.9980926 13.445,2 H 1.555 C -0.98552304,2.0115856 5.159983,2.9850001 7.323,3.469 9.511,3.958 13,4.43 13,4.43 c 1.679991,0.1998821 1.117258,0.1758413 0,0.507 0,0 -3.16,0.985 -5.323,1.469 C 5.489,6.896 2,7.368 2,7.368 0.30630887,7.5972077 0.92236328,7.5846316 2,7.875 c 0,0 3.16,0.985 5.323,1.469 2.188,0.49 5.677,0.962 5.677,0.962 1.579208,0.152955 1.239815,0.162743 0,0.507 0,0 -3.16,0.984 -5.323,1.467 C 5.489,12.77 2,13.242 2,13.242 c -1.82488039,0.216089 -0.9138673,0.210161 0,0.507 0,0 3.16,0.985 5.323,1.469 C 9.511,15.707 13,16.18 13,16.18 c 1.530265,0.207815 1.244833,0.123202 0,0.506 0,0 -3.16,0.985 -5.323,1.469 C 5.489,18.645 2,19.117 2,19.117 c -1.65841515,0.220368 -1.13821225,0.163248 0,0.507 0,0 3.16,0.986 5.323,1.468 2.188,0.49 5.677,0.962 5.677,0.962 1.295944,0.162498 1.487026,0.119918 0,0.507 0,0 -3.16,0.985 -5.323,1.468 C 5.489,24.519 2,24.991 2,24.991 c -1.26608276,0.177179 -1.55392875,0.125959 0,0.507 0,0 3.16,0.985 5.323,1.469 1.8789902,0.39571 4.764505,0.78706 5.677,0.962 6.11849,0.769531 -17.0638568,1.399561 -11,0 z"
+     class="switch-spring-body"
+     stroke-width="2"
+     strokelinecap="round"
+     id="path2126"
+     style="display:inline;stroke-width:1;stroke-dasharray:none"
+     sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
+  <path
+     d="m 3.15,27.928 c -2.59379133,-0.0062 12.239559,0.02051 8.6,0 M 3.15,2 c -2.59003646,0 12.273586,0.0047 8.6,0"
+     class="switch-spring-ends"
+     stroke-width="3"
+     strokelinecap="round"
+     id="path2128"
+     style="display:inline"
+     sodipodi:nodetypes="cccc" />
+</svg>

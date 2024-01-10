@@ -1,12 +1,12 @@
 <script>
+  import { createEventDispatcher } from 'svelte';
+
   export let total;
   export let per_page;
   export let page;
   export let current_page;
 
   let last_page = Math.ceil(total / per_page); 
-
-  import { createEventDispatcher } from 'svelte';
 
   const dispatch = createEventDispatcher();
   function range(size, startAt = 0, current_page) {

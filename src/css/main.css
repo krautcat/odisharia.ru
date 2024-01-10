@@ -15,9 +15,10 @@
   transform: translateY(-100%);
 }
 
-h1, h2 {
+h1,
+h2 {
   text-align: center;
-} 
+}
 
 h3 {
   text-align: center;
@@ -41,7 +42,7 @@ h3 {
 }
 
 .e_music_link {
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 .e-music-public-image {
@@ -52,21 +53,20 @@ h3 {
   a.nav-link {
     @apply text-gray-200;
   }
-  
-  a.nav-link:visited  {
+
+  a.nav-link:visited {
     @apply text-gray-50;
   }
 }
-  
+
 nav {
   padding: 0 0 0 0;
 }
 
 header {
   height: 50vh;
-  
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url('/images/header.webp');
   background-size: cover;
   background-position: center center;
@@ -74,8 +74,8 @@ header {
 }
 
 header.lazy {
-   background-image: none;
-   background-color: #F1F1FA;
+  background-image: none;
+  background-color: #f1f1fa;
 }
 
 header .intro-text {
@@ -85,7 +85,7 @@ header .intro-text {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  
+
   @apply pt-40;
   @apply pb-40;
 }
@@ -99,12 +99,30 @@ header .intro-text {
     align-items: center;
   }
 
-  .aboutme, .socials {
+  .aboutme,
+  .socials {
     @apply w-full;
+  }
+}
+
+@media (min-width: 640px) {
+  :root {
+    --userpic-size: 10rem;
+  }
+
+  .userpic {
+    display: flex;
+  }
+
+  .social_link_icon {
+    margin: 0rem 0.5rem 0rem 0.5rem;
+    height: calc(var(--userpic-size) / 2 - 1rem);
+    width: calc(var(--userpic-size) / 2 - 1rem);
   }
 }
 
 footer {
   text-align: center;
+  margin-top: 2rem;
   border-top: 2px;
 }

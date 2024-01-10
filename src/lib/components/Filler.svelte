@@ -10,5 +10,5 @@
 </div>
 
 <style lang="postcss">
-  @import "$lib/../css/lib/components/filler.css";
+  @import "$lib/css/filler.css";
 </style>
