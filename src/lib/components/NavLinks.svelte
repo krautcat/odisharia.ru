@@ -3,8 +3,8 @@
   import AnimatedHamburger from "./AnimatedHamburger.svelte";
 
   let other_sites = [
-    { link: "https://odisharia.ru/cv", name: "CV" },
-    { link: "https://odisharia.ru/wishlist", name: "Wishlist" },
+    { link: "./cv", name: "CV" },
+    { link: "./wishlist", name: "Wishlist" },
   ]
 
   export let offset = 10;

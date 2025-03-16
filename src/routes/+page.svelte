@@ -31,6 +31,11 @@
       link: "https://vk.com/e_emo",
       name: "E:\\music\\emo",
       image: "e-music-emo"
+    },
+    screamo: {
+      link: "https://vk.com/e_screamo",
+      name: "E:\\music\\screamo",
+      image: "e-music-screamo"
     }
   }
 
@@ -117,9 +122,10 @@
         Currently, I write about music on 
         <a href={e_music_publics.main.link} class="e_music_link">{e_music_publics.main.name}</a>,
         <a href={e_music_publics.math_rock.link} class="e_music_link">{e_music_publics.math_rock.name}</a>,
-        <a href={e_music_publics.noise_rock.link} class="e_music_link">{e_music_publics.noise_rock.name}</a>
+        <a href={e_music_publics.noise_rock.link} class="e_music_link">{e_music_publics.noise_rock.name}</a>,
+        <a href={e_music_publics.emo.link} class="e_music_link">{e_music_publics.emo.name}</a>
         and
-        <a href={e_music_publics.emo.link} class="e_music_link">{e_music_publics.emo.name}</a>.
+        <a href={e_music_publics.screamo.link} class="e_music_link">{e_music_publics.screamo.name}</a>".
       </p>
     </div>
 

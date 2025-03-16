@@ -2,18 +2,16 @@ FROM node:18-alpine
 
 WORKDIR /var/www/odisharia.ru
 
-COPY package*.json jsconfig.json svelte.config.js postcss.config.cjs tailwind.config.cjs vite.config.js ./
-
-RUN npm install --save
-
-COPY src ./src
-COPY static ./static
-
-RUN npm run build
+COPY package.json package-lock.json jsconfig.json svelte.config.js postcss.config.cjs tailwind.config.cjs vite.config.js ./
 
 EXPOSE 80
 EXPOSE 443
 
+EXPOSE 4173
+EXPOSE 5173
+
 ENV PORT=80
 
-CMD [ "node", "build" ]
+RUN ["npm", "install", "--save"]
+
+CMD ["/bin/sh"]
