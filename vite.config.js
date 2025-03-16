@@ -17,6 +17,13 @@ export default defineConfig(({ mode }) => {
     },
     resolve: {
       extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json', '.d.ts']
-    }
+    },
+    watch: {
+      usePolling: true
+    },
+    plugins: [
+      sveltekit(),
+      mkcert(),
+    ]
   }
 })

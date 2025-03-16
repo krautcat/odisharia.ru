@@ -1,10 +1,13 @@
-<script>
+<script lang="ts">
   import NavLinks from "$lib/components/NavLinks.svelte";
   import Pagination from "$lib/components/Pagination.svelte"; 
   import Filler from "$lib/components/Filler.svelte"; 
   import LoadingSpinner from "$lib/components/LoadingSpinner.svelte";
 
   import { view } from "$lib/../stores.js";
+  import type { PageData } from "./$types";
+
+  export let data: PageData;
 
   let items = [];
   let items_on_page = 0;
@@ -17,31 +20,18 @@
   let headerHeight = 0;
 
   async function changePage(params) {
-    current_page = params.page
-    await fetch(`https://api.odisharia.ru/wishlist?page=${current_page}`)
-      .then((response) => {
+    let data = await fetch(`/api/wishlist?page=${params.page}`)
+      .then((response: Response) => {
         return response.json();
-      })
-      .then(function (response) {
-        total = response.total;
-        per_page = response.per_page;
-        items = response.data;
-        let _items_on_page = 0; 
-        for (const category in items) {
-          for (const subcategory in items[category]) {
-            _items_on_page += items[category][subcategory].length;
-          }
-        }
-        items_on_page = _items_on_page;
-      })
-      .catch(error => {
-        console.error(error);
-      })
-      .finally(() => {
       });
-    return items;
+    
+    current_page = params.page;
+
+    items = data.items;
+    items_on_page = data.items_on_page;
+    total = data.total;
+    per_page = data.per_page;
   }
-  items = changePage({page: current_page});
   
   let navLinksBackground = "rgba(0, 0, 0, 0)";
   function updateNavLinksBackground(y) {
@@ -83,6 +73,13 @@
   });
 
   $: {
+    items = data.items;
+    items_on_page = data.items_on_page;
+    total = data.total;
+    per_page = data.per_page;
+
+    console.log(items)
+
     navLinksBackground = updateNavLinksBackground(y);
     navLinksTextColor = updateNavLinksTextColor(y);
     $view.fillerVisible = isFillerVisible(items_on_page);

@@ -1,5 +1,5 @@
 <script>
-    import NavLinks from "$lib/components/NavLinks.svelte";
+  import NavLinks from "$lib/components/NavLinks.svelte";
 
   let e_music_publics = {
     main: { 
@@ -33,7 +33,14 @@
       image: "e-music-emo",
       time: "2017 — present",
       description: "Wide range of emotional music: from mild midwest emo to \
-        aggressive screamo and emoviolence"
+        aggressive emocore."
+    },
+    screamo: {
+      link: "https://vk.com/e_screamo",
+      name: "E:\\music\\screamo",
+      image: "e-music-screamo",
+      time: "2023 — present",
+      description: "Extreme version of emo, including emoviolence"
     }
   }
 
