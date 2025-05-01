@@ -1,4 +1,6 @@
-<script>
+<script lang="ts">
+  import Header from "$lib/components/Header.svelte"
+  import Footer from "$lib/components/Footer.svelte";
   import NavLinks from "$lib/components/NavLinks.svelte";
 
   let social_links = [
@@ -33,64 +35,21 @@
       image: "e-music-emo",
     },
   };
-
-  let y = 0;
-  let headerHeight = 0;
-
-  let navLinksBackground = "rgba(0, 0, 0, 0)";
-  function updateNavLinksBackground(y) {
-    if (y > headerHeight) {
-      return "rgba(75, 85, 99, 255)";
-    } else {
-      return "rgba(0, 0, 0, 0)";
-    }
-  }
-
-  let navLinksTextColor = "#e5e7eb";
-  function updateNavLinksTextColor(y) {
-    if (y > headerHeight) {
-      return "#e5e7eb";
-    } else {
-      return "#e5e7eb";
-    }
-  }
-
-  let navLinksTextBackground = "rgba(0, 0, 0, 0)";
-
-  $: {
-    navLinksBackground = updateNavLinksBackground(y);
-    navLinksTextColor = updateNavLinksTextColor(y);
-  }
 </script>
 
-<svelte:window bind:scrollY={y} />
+<svelte:window />
 
-<NavLinks
-  backgroundColor={navLinksBackground}
-  listItemsColor={navLinksTextColor}
-  backgroundListItemsColor={navLinksTextBackground}
-  {headerHeight}
-/>
-
-<header class="flex flex-col justify-center" bind:clientHeight={headerHeight}>
-  <div class="container mx-auto">
-    <div class="intro-text text-gray-200 flex flex-col gap-y-8">
-      <div class="text-5xl uppercase">Georgiy Odisharia</div>
-      <p>
-        IT specialist, music enthusiast, portable audiophile and keyboard
-        hobbyist
-      </p>
-    </div>
-  </div>
-</header>
+<Header />
+<NavLinks />
 
 <main>
-  <div class="aboutme container w-5/6 md:w-1/2 mx-auto p-6">
-    <h2 class="text-3xl p-3">About me</h2>
-    <div class="pb-4">
+  <div class="aboutme">
+    <h2 class="text-3xl">About me</h2>
+    <div>
       <p class="pb-2">
         I am Georgiy Odisharia, embedded software developer from Moscow. My main
-        professional area is embedded Linux and mobile devices.
+        professional area is embedded Linux, bootloaders, low-level userspace
+        applications and mobile devices.
       </p>
       <p class="pb-2">
         Born in Yoshkar-Ola, republic of Mari El, I moved to Moscow when I was
@@ -106,11 +65,11 @@
       </p>
     </div>
 
-    <h3 class="text-2xl p-2 underline">
-      <a href="./music">Music</a>
+    <h3 class="text-2xl underline">
+      <a data-sveltekit-preload-data="tap" href="./music">Music</a>
     </h3>
-    <div class="pb-4">
-      <p class="pb-2">
+    <div>
+      <p>
         In the internet I am famous as admin of some public pages on VK
         platform. Currently, I write about music on
         <a href={e_music_publics.main.link} class="e_music_link"
@@ -129,17 +88,16 @@
       </p>
     </div>
 
-    <h3 class="text-2xl p-2">Audiophilia</h3>
+    <h3 class="text-2xl">Audiophilia</h3>
     <div>
       <p class="pb-2">
         In the audiophile hobby I am interested in portable audio devices. My
         main daily drivers currently are digital audio player theBit OPUS#3 and
         couple of earphones, Noble Audio Savanna and Etymotic ER-4S.
       </p>
-      <p />
     </div>
 
-    <h3 class="text-2xl p-2">Keyboards</h3>
+    <h3 class="text-2xl">Keyboards</h3>
     <div>
       <p>
         Recently I began to dig into keyboard hobby. My main areas of interest
@@ -151,10 +109,10 @@
     </div>
   </div>
 
-  <div class="container socials w-5/6 md:w-1/2 mx-auto p-6">
-    <h2 class="text-2xl pb-3">Me on the internet</h2>
-    <div class="mx-auto grid grid-rows-2 md:grid-cols-5">
-      <div class="md:row-span-3 md:col-span-1 mx-auto justify-items-left">
+  <div class="socials">
+    <h2 class="text-2xl">Me on the internet</h2>
+    <div class="grid grid-cols-1 grid-rows-5 lg:grid-cols-5 lg:grid-rows-3 lg:justify-items-center">
+      <div class="social-link-avatar row-span-4 lg:row-span-3 lg:col-span-1">
         <img
           src="images/userpic.jpg"
           alt="Loius Vain cat, userpic of Georgiy Odisharia"
@@ -162,13 +120,14 @@
         />
       </div>
       <div
-        class="md:row-span-3 md:col-span-4 flex flex-wrap md:gap-8 gap-10 justify-center px-4 m-auto social-links"
+        class="row-span-3 col-span-5 lg:col-span-4 flex justify-stretch 
+        gap-2 social-links"
       >
         {#each social_links as social_link}
           <div class="social-link social-link-{social_link.name}">
             <a href={social_link.link}>
               <img
-                class="social_link_icon"
+                class="social-link-icon"
                 alt="{social_link.name} icon"
                 src="icons/social-links/{social_link.name}.svg"
               />
@@ -177,13 +136,154 @@
         {/each}
       </div>
     </div>
-
-    <footer>
-      <p>2023</p>
-    </footer>
   </div>
 </main>
 
+<Footer/>
+
 <style global lang="postcss">
-  @import "../css/main.css";
+  @tailwind utilities;
+  @reference "tailwindcss";
+
+  :root {
+    --userpic-size: 16rem;
+    --tw-bg-opacity: 1;
+  }
+
+  main {
+    width: 60%;
+    margin: 0 0 0 0;
+  }
+
+  .nav-show {
+    transform: translateY(0%);
+  }
+
+  .nav-hide {
+    transform: translateY(-100%);
+  }
+
+  h1, h2 {
+    text-algin: left;
+  }
+
+  h3 {
+    text-align: left;
+  }
+
+  .other-sites {
+    text-align: center;
+  }
+
+  .userpic {
+    width: var(--userpic-size);
+    text-align: center;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .social-link-avatar {
+    margin: 0rem 0.5rem 0rem 0.5rem;
+    height: calc(var(--userpic-size) / 5 - 1 rem);
+    width: calc(var(--userpic-size) / 5 - 1 rem);
+  }
+
+  .e_music_link {
+    text-decoration: underline;
+  }
+
+  .e-music-public-image {
+    height: 100%;
+  }
+
+  @layer base {
+    a.nav-link {
+      @apply text-gray-600;
+    }
+
+    a.nav-link:visited {
+      @apply text-zinc-500;
+    }
+  }
+
+  nav {
+    padding: 0 0 0 0;
+  }
+
+  @media (max-width: 1024px) {
+    main {
+      width: 90%;
+      margin: 0 5% 0 5%;
+    }
+
+    header .intro-text {
+      align-items: center;
+    }
+
+    .aboutme,
+    .socials {
+      @apply w-full;
+      margin: 0 auto 0 auto
+    }
+
+    .social-link-avatar {
+      padding: 1rem 1rem 1rem 1rem;
+      margin: auto auto auto auto;
+      align-self: center;
+      justify-self: center;
+    }
+
+    .userpic {
+      margin: auto auto auto auto;
+
+    }
+
+    .social-links {
+      flex-direction: row;
+    }
+
+    .social-link {
+      margin: auto auto auto auto;
+      height: calc(var(--userpic-size) / 5 - 1rem);
+      width: calc(var(--userpic-size) / 5 - 1rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --userpic-size: 10rem;
+      width: 60%;
+      margin: auto;
+    }
+
+    main {
+      width: 80%;
+      margin: 0 auto 0 auto;
+    }
+    
+    .aboutme,
+    .socials {
+      @apply w-full;
+      margin: 0 auto 0 auto
+    }
+
+    .social-link-avatar {
+      margin: 0rem 0.5rem 0rem 0.5rem;
+    }
+
+    .userpic {
+      margin: auto;
+      vertical-align: middle;
+    }
+
+    .social-links {
+      column-gap: 1rem;
+    }
+
+    .social-link {
+      margin: auto auto auto auto;
+      height: calc(var(--userpic-size) / 2 - 1rem);
+      width: calc(var(--userpic-size) / 2 - 1rem);
+    }
+  }
 </style>

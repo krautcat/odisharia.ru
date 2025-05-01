@@ -1,47 +1,37 @@
-<script>
+<script lang="ts">
+  import Header from "$lib/components/Header.svelte";
+  import Footer from "$lib/components/Footer.svelte";
+
   let social_links = [
     { name: "GitHub", link: "https://github.com/krautcat", icon: "github" },
     { name: "LinkedIn", link: "https://linkedin.com/in/krautcat ", icon: "linkedin" }
   ];
-
-  let headerHeight = 0;
-  let photoHeight = 0;
-
-  let screenWidth = 0;
-  let mainDivWidth = 0;
-
-  let headerTextPaddingLeft = 0;
-  let headerPhotoPaddingRight = 0;
-
-  function updateHeaderPadding(screenWidth) {
-    return (screenWidth - mainDivWidth) / 2; 
-  }
 </script>
 
-<style lang="postcss">
-  @import "../../css/cv.css";
-</style>
+<svelte:window />
 
-<svelte:window bind:innerWidth={screenWidth}/>
+<Header intro_text={false} title={"Georgiy Odisharia → CV"} />
 
-<header bind:clientHeight={headerHeight}>
-  <div class="flex flex-wrap justify-items-center md:justify-items-left mx-auto w-1o/12 xl:w-7/12 md:h-1/4">
-    
-    <div class="order-1 md:order-1 py-16 md:h-1/4 md:w-1/4 mx-auto">
-      <img class="mx-auto photo" src="images/image.webp" alt="Gerogiy Odisharia"> 
-    </div>
+<main>
+  <div>
+    <div id="summary" class="justify-items-center md:justify-items-left mx-auto">
+      
+      <div id="photo">
+        <img class="photo" src="images/image.webp" alt="Gerogiy Odisharia"> 
+      </div>
 
-    <div class="flex-grow my-auto order-2 md:order-2 md:pl-8 mx-auto">
-      <div class="font-black text-3xl text-center lg:text-left">
-        Georgiy Odisharia
+      <div class="my-auto order-2 md:pl-8 mx-auto" id="info">
+        <div class="font-black text-3xl text-center lg:text-left">
+          Georgiy Odisharia
+        </div>
+        <div class="mx-auto text-center lg:text-left">
+          Moscow, Russia
+        </div>
+        <div class="text-center lg:text-left">
+          Embedded Linux system developer.
+        </div>    
       </div>
-      <div class="mx-auto text-center lg:text-left">
-        Moscow, Russia
-      </div>
-      <div class="text-center lg:text-left">
-        Embedded Linux system developer.
-      </div>
-      <div class="flex flex-wrap md:gap-2 gap-10 justify-evenly md:justify-start py-4 my-auto social-links">
+      <div class="flex md:gap-2 gap-10 justify-evenly py-4 my-auto social-links">
         {#each social_links as social_link}
           <div class="social-link social-link-{social_link.name}">
             <a href="{social_link.link}">
@@ -50,33 +40,35 @@
           </div>
         {/each}
       </div> 
-    
     </div>
   </div>
-</header>
 
-<main>
-  <div class="container grid grid-cols-1 auto-rows-auto lg:grid-cols-3 gap-8 w-10/12 xl:w-7/12 mx-auto" bind:clientWidth={mainDivWidth}>
+  <div class="container grid grid-cols-1 auto-rows-auto lg:grid-cols-3 gap-8 mx-auto">
         
     <div class="lg:col-span-2">
       <h2>Experience</h2>
     
-      <div class="container grid grid-cols-1 lg:grid-cols-3 auto-rows-auto gap-x-1.5 gap-y-6">  
+      <div class="container grid grid-cols-1 lg:grid-cols-3 auto-rows-auto gap-x-1.5 md:gap-y-6">  
         <div> 
           <h3>Edelweiss, LLC</h3>
           <h4>December, 2021 — now</h4>
         </div>
         <div class="col-span-2">
-          <h4>Embedded software developer</h4>
+          <h4>Middle embedded software developer and DevOps</h4>
           <p>
-            Bringup of boards based on Baikal and Rockchip SoCs, modifying U-boot, UEFI (based
-            on EDK 2) and Linux kernel.
+            Bringup of boards based on Baikal, Elbrus and Rockchip SoCs, modifying
+            U-boot, UEFI (based on EDK 2) and Linux kernel, creating BSP, some DevOps.
           </p>
           <ul class="list-disc pl-8 dashed-list">
             <li>Linux kernel</li>
             <li>U-boot</li>
             <li>UEFI (EDK 2)</li>
             <li>Build systems of vendors</li>
+            <li>OpenBMC</li>
+            <li>BSP for boards</li>
+            <li>Baikal, Elbrus, Rockhip</li>
+            <li>Testing stand for boards (Python)</li>
+            <li>DevOps (Redmine, GitLab, Gitea)</li>
           </ul>
         </div>
         
@@ -138,41 +130,146 @@
     <div class="lg:col-span-1">
       <h2>Skills</h2>
       <div class="grid grid-cols-2 auto-cols-min">
-        <div class="h-1/6">
-          <h3>Programming languages</h3>
-        </div>
-        <div class="h-1/6">        
-          <h3>Technologies</h3>
-        </div>
-        <div>
-          <ul class="list-disc pl-8 dashed-list">
-            <li>C</li>
-            <li>C++</li>
-            <li>Python</li>
-            <li>Perl</li>
-          </ul>    
-        </div>
-        <div>
-          <ul class="list-disc pl-8 dashed-list">
-            <li>Linux kernel</li>
-            <li>U-boot</li>
-            <li>UEFI (EDK 2)</li>
-            <li>Device Tree</li>
-            <li>Buildroot</li>
-            <li>Android</li>
-            <li>Sailfish OS</li>
-          </ul>
-        </div>
+      <div class="h-1/6">
+        <h3>Programming languages</h3>
+      </div>
+      <div class="h-1/6">        
+        <h3>Technologies</h3>
+      </div>
+      <div>
+        <ul class="list-disc pl-8 dashed-list">
+          <li>C</li>
+          <li>C++</li>
+          <li>Python</li>
+          <li>Perl</li>
+          <li>Ruby</li>
+          <li>Tcl</li>
+          <li>Bash</li>
+          <li>Rust</li>
+        </ul>    
+      </div>
+      <div>
+        <ul class="list-disc pl-8 dashed-list">
+          <li>Linux kernel</li>
+          <li>U-boot</li>
+          <li>UEFI (EDK 2)</li>
+          <li>Device Tree</li>
+          <li>Buildroot</li>
+          <li>Android</li>
+          <li>Sailfish OS</li>
+          <li>Yoctu</li>
+          <li>OpenBMC</li>
+        </ul>
+      </div>
+      </div>
+      <div class="">
+        <h2>Contact</h2>
+        <p>E-mail:
+          <a href="mailto:georgiy.odisharia@gmail.com">georgiy.odisharia at gmail.com</a>
+        </p>
+        <p>Telegram:
+          <a href="https://t.me/krautcat">@krautcat</a>
+        </p>
       </div>
     </div>
-            
-    <div class="lg:col-span-3 md:mx-auto">
-      <h2 class="md:text-center">Contact</h2>
-      <a href="mailto:georgiy.odisharia@gmail.com" class="md:text-center">georgiy.odisharia at gmail.com</a>
-    </div>
   </div>
-
-  <footer class="mx-auto py-4">
-    <p class="text-center">2023</p>
-  </footer>
 </main>
+
+<Footer />
+
+<style lang="postcss">
+  @tailwind utilities;
+  @reference "tailwindcss"; 
+  main {
+    width: 60%;
+    margin: auto;
+  }
+  
+  #summary {
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  #info {
+    flex-grow: 1;
+    justify-self: auto;
+  }
+  
+  h2 {
+    @apply font-bold;
+    @apply text-3xl;
+    @apply py-4;
+  }
+  
+  h3 {
+    @apply font-semibold;
+  }
+  
+  h4 {
+    @apply font-medium;
+  }
+  
+  #photo {
+    margin: 1rem 1rem 1rem 1rem;
+  }
+  .social_link_icon {
+    margin: 0rem 0.5rem 0rem 0.5rem;
+    height: 2rem;
+    width: 2rem;
+  }
+  
+  .photo {
+    border-radius: 50%;
+    height: 40vh;
+    width: 40vh;
+  }
+  
+  ul.dashed-list {
+    list-style-type: none;
+  }
+  
+  ul.dashed-list > li {
+    text-indent: -1.5rem;
+  }
+  
+  ul.dashed-list > li:before {
+    content: "— ";
+    text-indent: -1.5rem;
+  }
+  
+  footer {
+    text-align: center;
+    border-top: 2px;
+  }
+  
+  @media (max-width: 640px) {
+
+    h2 {
+      margin: 1rem 0 0 0;
+      padding: 0 0 0 0;
+    }
+
+    h4 {
+      margin: 0 0 1rem 0;
+    }
+    main {
+      width: 90%;
+      margin: auto;
+    }
+
+    #summary {
+      flex-wrap: wrap;
+    }
+
+    #photo {
+      display: block;
+      flex-wrap: nowrap;
+      margin: auto;
+    }
+
+    .social-links {
+      flex-grow: 1;
+    }
+  }
+</style>

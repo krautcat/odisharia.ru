@@ -1,5 +1,6 @@
 <script>
-  import NavLinks from "$lib/components/NavLinks.svelte";
+  import Footer from "$lib/components/Footer.svelte"
+  import Header from "$lib/components/Header.svelte";
 
   let e_music_publics = {
     main: { 
@@ -35,13 +36,6 @@
       description: "Wide range of emotional music: from mild midwest emo to \
         aggressive emocore."
     },
-    screamo: {
-      link: "https://vk.com/e_screamo",
-      name: "E:\\music\\screamo",
-      image: "e-music-screamo",
-      time: "2023 — present",
-      description: "Extreme version of emo, including emoviolence"
-    }
   }
 
   let y = 0;
@@ -73,58 +67,144 @@
   } 
 </script>
 
-<style global lang="postcss">
-  @import "../../css/music.css"
-</style>
-
 <svelte:window bind:scrollY={y}/>
 
-<NavLinks backgroundColor={navLinksBackground} listItemsColor={navLinksTextColor}
-  backgroundListItemsColor={navLinksTextBackground}/>
-
-<header class="flex flex-col justify-center" bind:clientHeight={headerHeight}>
-  <div class="container mx-auto">
-    <div class="text-gray-200 intro-text flex flex-col gap-y-8">
-      <div class="text-5xl uppercase">
-        Music
-      </div>
-    </div>
-  </div>
-</header>
+<Header title="Georgiy Odisharia → Music" intro_text={false}/>
 
 <main>
-  <div class="music container w-5/6 lg:w-1/2 mx-auto my-8">
+  <div class="music w-5/6 lg:w-1/2 mx-auto my-8">
     <h1 class="text-3xl text-center">
       E:\music
     </h1>
     <div class="container my-8">
-      <p>
+      <p id="e-music-intro">
         I wrote most of my reviews in network of music blogs called E:\music.
         I'm administrator on thematic music blogs and redactor on main page of
         blog.
       </p>
     </div>
-    {#each Object.entries(e_music_publics) as [_, e_music_public]} 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-10 justify-center px-0 md:px-16 py-8 m-auto social-links">
-      <div class="object-right e-music-link-image col-span-1">
-        <a href={e_music_public.link}>
-          <img class="e_music_public_icon" alt="{e_music_public.name} icon" src="images/e-music/{e_music_public.image}.jpg">
-        </a>
+    <div class="main-publics-container">
+      {#each Object.entries(e_music_publics) as [_, e_music_public]}
+      <div class="px-0 md:px-16 py-8 social-links">
+        <div class="public-link-image">
+          <a href={e_music_public.link}>
+            <img class="public-icon" alt="{e_music_public.name} icon"
+              src="images/e-music/{e_music_public.image}.jpg"/>
+          </a>
+        </div>
+        <div class="">
+          <a href={e_music_public.link} class="e=music-link-caption">
+            <h2 class="text-1.5xl underline e-music-public-icon-text md:pt-3.5">
+              {e_music_public.name}
+            </h2>
+          </a>
+          <h3 class="py-2">
+            {e_music_public.time}
+          </h3>
+          <p class="e-music-public-description">
+            {e_music_public.description}
+          </p>
+        </div>
       </div>
-      <div class="col-span-2">
-        <a href={e_music_public.link}>
-          <h2 class="text-1.5xl underline e-music-public-icon-text md:pt-3.5">
-            {e_music_public.name}
-          </h2>
-        </a>
-        <h3 class="py-2">
-          {e_music_public.time}
-        </h3>
-        <p>
-          {e_music_public.description}
+      {/each} 
+    </div>
+    <h1 class="text-3xl text-center">
+      <a href="https://t.me/krautcat_musique">
+        krautcat | musique
+      </a>
+    </h1>
+    <div class="container my-8">
+      <div class="social-links">
+        <div class="public-link-image">
+          <a href="https://t.me/krautcat_musique">
+            <img class="public-icon" alt="krautcat | musique icon"
+              src="images/publics/krautcat-musique.webp"/>
+          </a>
+        </div>
+        <p id="e-music-intro">
+          Part of my reviews goes to my main musicblog, Telegram channel
+          <a href="https://t.me/krautcat_musique">krautcat | musique</a>. It
+          contains exclusive texts and reviews of albums from main public of 
+          E:\music network as well as from E:\music\emo.
         </p>
       </div>
-    </div>
-    {/each} 
+    </div> 
   </div> 
 </main>
+
+<Footer />
+
+<style global lang="postcss">@reference "tailwindcss";
+  @reference "tailwindcss";
+  @tailwind utilities;
+  
+  main {
+    width: 60%;
+    margin: auto;
+  }
+
+  .social-links {
+    display: flex;
+  }
+
+  .public-link-image {
+    margin: 1rem 1rem 1rem 0rem;
+  }
+
+  .e-music-public-icon-text {
+      text-align: left;
+      position: relative;
+      bottom: 0;
+  }
+
+  .public-icon {
+      position: relative;
+      float: left;
+      height: auto;
+      width: 10vw;
+  }
+
+  @media (max-width: 1024px) {
+    main {
+      width: 90%;
+      margin: 0 5% 0 5%;
+    }
+
+
+  }
+
+  @media (max-width: 640px) {
+    .social-links {
+      display: contents;
+    }
+
+    #e-music-intro {
+      margin-bottom: 3rem;
+    }
+
+    .public-link-image {
+      display: flex;
+      margin: 0rem 0rem 1rem 0rem;
+    }
+
+    .public-icon {
+      width: 100%;
+    }
+
+    .e-music-link-caption {
+
+    }
+
+    .e-music-public-icon-text {
+      margin-top: 0.5rem;
+    }
+
+    .e-music-public-description {
+      margin-bottom: 3rem;
+    }
+  
+    header .intro-text {
+      align-items: center;
+    }
+  }
+</style>

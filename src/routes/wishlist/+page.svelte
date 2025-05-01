@@ -1,7 +1,6 @@
 <script lang="ts">
   import NavLinks from "$lib/components/NavLinks.svelte";
-  import Pagination from "$lib/components/Pagination.svelte"; 
-  import Filler from "$lib/components/Filler.svelte"; 
+  import Pagination from "$lib/components/Pagination.svelte";
   import LoadingSpinner from "$lib/components/LoadingSpinner.svelte";
 
   import { view } from "$lib/../stores.js";

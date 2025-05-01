@@ -6,7 +6,7 @@
   export let ariaLabel = 'toggle menu'
   export let width: string | number = 80
 
-  export let color = "#f9fafb"
+  export let color = "rgba(255, 255, 255, 255)"
 </script>
   
 <button on:click={onClick} aria-expanded={open} aria-label={ariaLabel}>
@@ -31,9 +31,7 @@
 </button>
 
 <style lang="postcss">
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+  @reference "tailwindcss";
   
   :root {
     --transition-duration: 400ms;
@@ -46,6 +44,7 @@
     overflow: hidden;
     z-index: 2;
     top: 0vh;
+    background-color: transparent;
   }
   svg {
     transition: transform var(--transition-duration);
@@ -73,7 +72,7 @@
     transform: rotate(90deg);
   }
 
-  @screen md {
+  @media screen md {
     button {
       visibility: hidden;
       position: absolute;
