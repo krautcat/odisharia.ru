@@ -8,13 +8,11 @@ COPY package.json package-lock.json jsconfig.json svelte.config.js \
 COPY src ./src
 COPY static ./static
 
-EXPOSE 80
-EXPOSE 443
-
 EXPOSE 4173
 EXPOSE 5173
 
-ENV PORT=80
+ENV PORT=5173
+ENV HOST=172.20.0.11
 
 RUN ["npm", "install", "--save"]
 RUN ["npm", "run", "build"]
