@@ -113,6 +113,11 @@
 
 <style global lang="postcss">
 
+  main {
+    width: 60%;
+    margin: auto;
+  }
+
   #main-publics-container {
     display: block;
   }
