@@ -135,7 +135,7 @@
   </div>
 </main>
 
-<style global lang="postcss">
+<style lang="postcss">
   @reference "tailwindcss";
   @tailwind utilities;
 

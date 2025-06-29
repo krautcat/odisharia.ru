@@ -111,7 +111,7 @@
   </div>
 </main>
 
-<style global lang="postcss">
+<style lang="postcss">
 
   main {
     width: 60%;
