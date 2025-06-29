@@ -19,7 +19,7 @@
     "@sveltejs/kit": "latest",
     "@sveltejs/vite-plugin-svelte": "latest",
     "@tailwindcss/typography": "^0.5.15",
-    "@tailwindcss/vite": "~4.0.0",
+    "@tailwindcss/vite": "^4.0.0",
     "@types/w3c-xmlserializer": "^2.0.2",
     "autoprefixer": "^10.4.14",
     "cssnano": "^5.0.1",
