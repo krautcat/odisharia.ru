@@ -44,7 +44,7 @@
 
 <main>
   <div class="music mx-auto my-8">
-    <h1 class="text-3xl text-center">
+    <h1 class="text-3xl">
       E:\music
     </h1>
     <div class="container my-8">
@@ -82,13 +82,13 @@
   </div> 
 
   <div class="music mx-auto my-8">
-    <h1 class="text-3xl text-center">
+    <h1 class="text-3xl">
       <a href="https://t.me/krautcat_musique">
         krautcat | musique
       </a>
     </h1>
     <div class="main-publics-container">
-      <div class="px-0 md:px-16 py-8 social-links">
+      <div class="social-links">
         <div class="public-link-image">
           <a href="https://t.me/krautcat_musique">
             <img class="public-icon" alt="krautcat | musique icon"
@@ -119,7 +119,8 @@
   }
 
   #main-publics-container {
-    display: block;
+    display: flex;
+    flex-direction: column;
   }
 
   .social-links {
@@ -134,11 +135,6 @@
   .public-link-image {
     flex-shrink: 1;
     margin: 1rem 1rem 1rem 0rem;
-  }
-
-  .e-music-public-info {
-    flex-grow: 1;
-    margin-left: 0;
   }
 
   .e-music-public-icon-text {
