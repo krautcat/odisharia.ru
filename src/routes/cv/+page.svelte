@@ -190,7 +190,6 @@
   @reference "tailwindcss";
   @tailwind utilities;
   main {
-    width: 60%;
     margin: auto;
   }
   

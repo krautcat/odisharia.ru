@@ -43,7 +43,7 @@
 <Header subtitle="Music" intro_text={false}/>
 
 <main>
-  <div class="music w-5/6 lg:w-1/2 mx-auto my-8">
+  <div class="music mx-auto my-8">
     <h1 class="text-3xl text-center">
       E:\music
     </h1>
@@ -81,7 +81,7 @@
     </div>
   </div> 
 
-  <div class="music w-5/6 lg:w-1/2 mx-auto my-8">
+  <div class="music mx-auto my-8">
     <h1 class="text-3xl text-center">
       <a href="https://t.me/krautcat_musique">
         krautcat | musique
@@ -112,10 +112,6 @@
 </main>
 
 <style global lang="postcss">
-  main {
-    width: 60%;
-    margin: auto;
-  }
 
   #main-publics-container {
     display: block;

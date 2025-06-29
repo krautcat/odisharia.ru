@@ -11,3 +11,8 @@
 
     background-color: oklch(0.91 0.0247 71.45);
 }
+
+main {
+    width: 60%;
+    margin: auto;
+}
