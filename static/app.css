@@ -2,12 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif+Caption:ital@0;1&display=swap');
 
 * {
-    font-family: var(--font-sans);
+    font-family: var(--font-serif);
 }
 
 :root {
     --font-sans: "PT Sans";
-    --font-serif: "PT Serif Caption";
+    --font-serif: "PT Serif";
 
     background-color: oklch(0.91 0.0247 71.45);
 }

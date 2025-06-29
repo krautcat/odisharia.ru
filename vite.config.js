@@ -24,7 +24,7 @@ export default defineConfig(({ mode }) => {
       'process.env.NODE_ENV': mode === 'production' ? '"production"' : '"development"'
     },
     resolve: {
-      extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json', '.d.ts', '.svelte']
+      extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json', '.d.ts', '.svelte', '.html']
     },
     watch: {
       usePolling: true

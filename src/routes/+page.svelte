@@ -1,6 +1,5 @@
 <script lang="ts">
   import Header from "$lib/components/Header.svelte"
-  import Footer from "$lib/components/Footer.svelte";
   import NavLinks from "$lib/components/NavLinks.svelte";
 
   let social_links = [
@@ -66,7 +65,7 @@
     </div>
 
     <h3 class="text-2xl underline">
-      <a data-sveltekit-preload-data="tap" href="./music">Music</a>
+      <a data-sveltekit-preload-data="off" href="music">Music</a>
     </h3>
     <div>
       <p>
@@ -109,9 +108,9 @@
     </div>
   </div>
 
-  <div class="socials">
+  <div>
     <h2 class="text-2xl">Me on the internet</h2>
-    <div class="grid grid-cols-1 grid-rows-5 lg:grid-cols-5 lg:grid-rows-3 lg:justify-items-center">
+    <div class="socials lg:justify-items-center">
       <div class="social-link-avatar row-span-4 lg:row-span-3 lg:col-span-1">
         <img
           src="images/userpic.jpg"
@@ -119,10 +118,7 @@
           class="userpic"
         />
       </div>
-      <div
-        class="row-span-3 col-span-5 lg:col-span-4 flex justify-stretch 
-        gap-2 social-links"
-      >
+      <div class="social-links">
         {#each social_links as social_link}
           <div class="social-link social-link-{social_link.name}">
             <a href={social_link.link}>
@@ -139,11 +135,9 @@
   </div>
 </main>
 
-<Footer/>
-
 <style global lang="postcss">
-  @tailwind utilities;
   @reference "tailwindcss";
+  @tailwind utilities;
 
   :root {
     --userpic-size: 16rem;
@@ -152,7 +146,7 @@
 
   main {
     width: 60%;
-    margin: 0 0 0 0;
+    margin: auto;
   }
 
   .nav-show {
@@ -164,7 +158,7 @@
   }
 
   h1, h2 {
-    text-algin: left;
+    text-align: left;
   }
 
   h3 {
@@ -173,6 +167,17 @@
 
   .other-sites {
     text-align: center;
+  }
+
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .social-links {
+    margin: auto auto auto 2rem;
+    gap: 2rem;
+    display: flex;
   }
 
   .userpic {
@@ -184,10 +189,13 @@
 
   .social-link-avatar {
     margin: 0rem 0.5rem 0rem 0.5rem;
+  }
+
+  .social-link {
     height: calc(var(--userpic-size) / 5 - 1 rem);
     width: calc(var(--userpic-size) / 5 - 1 rem);
   }
-
+ 
   .e_music_link {
     text-decoration: underline;
   }
@@ -234,12 +242,16 @@
     }
 
     .userpic {
-      margin: auto auto auto auto;
-
+      display: block;
+      margin: auto;
     }
 
     .social-links {
+      margin: auto;
+      display: flex;
       flex-direction: row;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
     .social-link {
@@ -252,17 +264,14 @@
   @media (min-width: 1024px) {
     :root {
       --userpic-size: 10rem;
-      width: 60%;
       margin: auto;
     }
 
     main {
-      width: 80%;
       margin: 0 auto 0 auto;
     }
     
-    .aboutme,
-    .socials {
+    .aboutme, .socials {
       @apply w-full;
       margin: 0 auto 0 auto
     }
@@ -272,18 +281,17 @@
     }
 
     .userpic {
-      margin: auto;
       vertical-align: middle;
     }
 
     .social-links {
-      column-gap: 1rem;
+      justify-content: center;
     }
 
     .social-link {
       margin: auto auto auto auto;
-      height: calc(var(--userpic-size) / 2 - 1rem);
-      width: calc(var(--userpic-size) / 2 - 1rem);
+      height: calc(var(--userpic-size) / 3 - 1rem);
+      width: calc(var(--userpic-size) / 3 - 1rem);
     }
   }
 </style>

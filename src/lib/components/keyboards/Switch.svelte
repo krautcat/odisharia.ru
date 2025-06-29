@@ -1,5 +1,61 @@
 <style global lang="postcss">
-  @import '../../css/keyboards/switch.css';
+  ul.dashed-list-indented {
+    list-style: none;
+  }
+
+  ul.dashed-list-indented > li {
+    margin-left: 1rem;
+  }
+
+  ul.dashed-list-indented > li::before {
+    content: '— ';
+    text-indent: 1rem;
+  }
+
+  ul.dashed-list-indented > li.custom-list-image {
+    white-space: nowrap;
+  }
+
+  ul.dashed-list-indented > li.custom-list-image::before {
+    content: '';
+    display: inline-flex;
+    position: relative;
+    left: 0;
+    width: 1em;
+    height: 1em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+  }
+
+  .custom-image {
+    content: '';
+    position: relative;
+    left: 0;
+    width: 10em;
+    height: 10em;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+  }
+
+  .switch-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex: 1 1 auto;
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .swtich-info {
+    padding-left: 1em;
+  }
 </style>
 
 <script lang="typescript">

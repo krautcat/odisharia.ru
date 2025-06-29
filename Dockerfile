@@ -1,8 +1,12 @@
-FROM node:22-alpine
+FROM node:22-alpine3.20
 
 WORKDIR /var/www/odisharia.ru
 
-COPY package.json package-lock.json jsconfig.json svelte.config.js postcss.config.cjs tailwind.config.cjs vite.config.js ./
+COPY package.json package-lock.json jsconfig.json svelte.config.js \
+    postcss.config.cjs tailwind.config.cjs vite.config.js tsconfig.json \
+    vite.config.js ./
+COPY src ./src
+COPY static ./static
 
 EXPOSE 80
 EXPOSE 443
@@ -13,5 +17,6 @@ EXPOSE 5173
 ENV PORT=80
 
 RUN ["npm", "install", "--save"]
+RUN ["npm", "run", "build"]
 
-CMD ["/bin/sh"]
+CMD ["node", "build"]

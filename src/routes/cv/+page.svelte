@@ -10,40 +10,39 @@
 
 <svelte:window />
 
-<Header intro_text={false} title={"Georgiy Odisharia → CV"} />
+<Header intro_text={false} subtitle={"CV"} />
 
 <main>
   <div>
-    <div id="summary" class="justify-items-center md:justify-items-left mx-auto">
+    <div id="summary">
       
       <div id="photo">
         <img class="photo" src="images/image.webp" alt="Gerogiy Odisharia"> 
       </div>
 
-      <div class="my-auto order-2 md:pl-8 mx-auto" id="info">
-        <div class="font-black text-3xl text-center lg:text-left">
-          Georgiy Odisharia
+      <div id="info">
+        <div id="name" class="font-black text-3xl text-center lg:text-left">
+          <h1>
+            Georgiy Odisharia
+          </h1>
         </div>
-        <div class="mx-auto text-center lg:text-left">
+        <div id="location" class="mx-auto text-center lg:text-left">
           Moscow, Russia
         </div>
-        <div class="text-center lg:text-left">
+        <div id="professional-area" class="text-center lg:text-left">
           Embedded Linux system developer.
-        </div>    
-      </div>
-      <div class="flex md:gap-2 gap-10 justify-evenly py-4 my-auto social-links">
+        </div>
+        <div id="social-links">
         {#each social_links as social_link}
-          <div class="social-link social-link-{social_link.name}">
             <a href="{social_link.link}">
               <img class="social_link_icon" alt="{social_link.name} icon" src="icons/social-links/{social_link.icon}.svg"> 
             </a>
-          </div>
         {/each}
-      </div> 
+      </div>
     </div>
   </div>
 
-  <div class="container grid grid-cols-1 auto-rows-auto lg:grid-cols-3 gap-8 mx-auto">
+  <div id="main-info" class="gap-8 mx-auto">
         
     <div class="lg:col-span-2">
       <h2>Experience</h2>
@@ -110,7 +109,7 @@
         
         <div>
           <h3>Samsung R&D Russia</h3>
-          <h4>July, 2017 — November 2018</h4>
+          <h4>July, 2017 — November, 2018</h4>
         </div>
         <div class="col-span-2">
           <h4>Intern embedded software developer</h4>
@@ -127,40 +126,52 @@
       </div>
     </div>
             
-    <div class="lg:col-span-1">
+    <div>
       <h2>Skills</h2>
-      <div class="grid grid-cols-2 auto-cols-min">
-      <div class="h-1/6">
-        <h3>Programming languages</h3>
-      </div>
-      <div class="h-1/6">        
-        <h3>Technologies</h3>
-      </div>
-      <div>
-        <ul class="list-disc pl-8 dashed-list">
-          <li>C</li>
-          <li>C++</li>
-          <li>Python</li>
-          <li>Perl</li>
-          <li>Ruby</li>
-          <li>Tcl</li>
-          <li>Bash</li>
-          <li>Rust</li>
-        </ul>    
-      </div>
-      <div>
-        <ul class="list-disc pl-8 dashed-list">
-          <li>Linux kernel</li>
-          <li>U-boot</li>
-          <li>UEFI (EDK 2)</li>
-          <li>Device Tree</li>
-          <li>Buildroot</li>
-          <li>Android</li>
-          <li>Sailfish OS</li>
-          <li>Yoctu</li>
-          <li>OpenBMC</li>
-        </ul>
-      </div>
+      <div id="skills" class="">
+        <div id="programming-languages" class="h-1/6">
+          <h3>Programming languages</h3>
+          <div>
+            <ul class="list-disc pl-8 dashed-list">
+              <li>C</li>
+              <li>C++</li>
+              <li>Python</li>
+              <li>Perl</li>
+              <li>Ruby</li>
+              <li>Tcl</li>
+              <li>Bash</li>
+              <li>Rust</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+            </ul>    
+          </div>
+        </div>
+        <div id="technologies" class="h-1/6">        
+          <h3>Technologies</h3>
+          <div>
+            <ul class="list-disc pl-8 dashed-list">
+              <li>Linux kernel</li>
+              <li>U-boot</li>
+              <li>UEFI (EDK 2)</li>
+              <li>Device Tree</li>
+              <li>Buildroot</li>
+              <li>Android</li>
+              <li>Sailfish OS</li>
+              <li>Yocto Linux</li>
+              <li>OpenBMC</li>
+            </ul>
+          </div>
+        </div> <div id="technologies-other" class="h-1/6">        
+          <h3>Other technologies</h3>
+          <div>
+            <ul class="list-disc pl-8 dashed-list">
+              <li>Vue</li>
+              <li>Svelte</li>
+              <li>Sinatra</li>
+              <li>Starlette</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="">
         <h2>Contact</h2>
@@ -175,11 +186,9 @@
   </div>
 </main>
 
-<Footer />
-
-<style lang="postcss">
+<style global lang="postcss">
+  @reference "tailwindcss";
   @tailwind utilities;
-  @reference "tailwindcss"; 
   main {
     width: 60%;
     margin: auto;
@@ -188,14 +197,34 @@
   #summary {
     display: flex;
     flex-direction: row;
-
+    
   }
 
   #info {
     flex-grow: 1;
-    justify-self: auto;
+    display: flex;
+    flex: 0 0 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+  }
+
+  #name {
+    margin: auto auto auto 1rem;
+    flex: 0 0 100%;
+  }
+
+  #location, #professional-area {
+    margin: 1rem auto auto 1rem;
+    flex: 0 0 100%;
   }
   
+  #social-links {
+    margin: 2rem auto auto 1rem;
+    display: flex;
+    flex: 0 0 100%;
+  }
+
   h2 {
     @apply font-bold;
     @apply text-3xl;
@@ -224,6 +253,28 @@
     height: 40vh;
     width: 40vh;
   }
+
+  #main-info {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+
+  #skills {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #skills-and-technologies {
+    display: flex;
+    flex: auto;
+    flex-wrap: wrap;
+  }
+
+  #programming-languages, #technologies, #tehcnologies-other {
+    flex-grow: 1;
+    margin-right: 2rem;
+  }
   
   ul.dashed-list {
     list-style-type: none;
@@ -238,12 +289,15 @@
     text-indent: -1.5rem;
   }
   
-  footer {
-    text-align: center;
-    border-top: 2px;
-  }
-  
   @media (max-width: 640px) {
+    #summary {
+      text-align: left;
+    }
+
+    #name, #location, #professional-area, #social-links {
+      margin-left: 0rem;
+    }
+
 
     h2 {
       margin: 1rem 0 0 0;
@@ -265,7 +319,7 @@
     #photo {
       display: block;
       flex-wrap: nowrap;
-      margin: auto;
+      margin: 1rem auto auto auto;
     }
 
     .social-links {

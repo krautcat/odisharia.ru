@@ -1,5 +1,4 @@
-<script>
-  import Footer from "$lib/components/Footer.svelte"
+<script lang="ts">
   import Header from "$lib/components/Header.svelte";
 
   let e_music_publics = {
@@ -37,39 +36,11 @@
         aggressive emocore."
     },
   }
-
-  let y = 0;
-  let headerHeight = 0;
-  
-  let navLinksBackground = "rgba(0, 0, 0, 0)";
-  function updateNavLinksBackground(y) {
-    if (y > headerHeight) {
-      return "rgba(75, 85, 99, 255)";
-    } else {
-      return "rgba(0, 0, 0, 0)";
-    }
-  }
-
-  let navLinksTextColor = "#e5e7eb";
-  function updateNavLinksTextColor(y) {
-    if (y > headerHeight) {
-      return "#e5e7eb"; 
-    } else {
-      return "#e5e7eb";
-    }
-  }
-
-  let navLinksTextBackground = "rgba(0, 0, 0, 0)";
-  
-  $: {
-    navLinksBackground = updateNavLinksBackground(y);
-    navLinksTextColor = updateNavLinksTextColor(y);
-  } 
 </script>
 
-<svelte:window bind:scrollY={y}/>
+<svelte:window />
 
-<Header title="Georgiy Odisharia → Music" intro_text={false}/>
+<Header subtitle="Music" intro_text={false}/>
 
 <main>
   <div class="music w-5/6 lg:w-1/2 mx-auto my-8">
@@ -83,16 +54,16 @@
         blog.
       </p>
     </div>
-    <div class="main-publics-container">
+    <div id="main-publics-container">
       {#each Object.entries(e_music_publics) as [_, e_music_public]}
-      <div class="px-0 md:px-16 py-8 social-links">
+      <div class="social-links">
         <div class="public-link-image">
           <a href={e_music_public.link}>
             <img class="public-icon" alt="{e_music_public.name} icon"
               src="images/e-music/{e_music_public.image}.jpg"/>
           </a>
         </div>
-        <div class="">
+        <div class="e-music-public-info">
           <a href={e_music_public.link} class="e=music-link-caption">
             <h2 class="text-1.5xl underline e-music-public-icon-text md:pt-3.5">
               {e_music_public.name}
@@ -108,53 +79,72 @@
       </div>
       {/each} 
     </div>
+  </div> 
+
+  <div class="music w-5/6 lg:w-1/2 mx-auto my-8">
     <h1 class="text-3xl text-center">
       <a href="https://t.me/krautcat_musique">
         krautcat | musique
       </a>
     </h1>
-    <div class="container my-8">
-      <div class="social-links">
+    <div class="main-publics-container">
+      <div class="px-0 md:px-16 py-8 social-links">
         <div class="public-link-image">
           <a href="https://t.me/krautcat_musique">
             <img class="public-icon" alt="krautcat | musique icon"
               src="images/publics/krautcat-musique.webp"/>
           </a>
         </div>
-        <p id="e-music-intro">
-          Part of my reviews goes to my main musicblog, Telegram channel
+        <div>
+        <h3 class="py-2">
+          2023 – present
+        </h3>
+        <p id="e-music-public-description">
+          Part of my reviews goes to my main music blog, Telegram channel
           <a href="https://t.me/krautcat_musique">krautcat | musique</a>. It
           contains exclusive texts and reviews of albums from main public of 
           E:\music network as well as from E:\music\emo.
         </p>
+        </div>
       </div>
     </div> 
-  </div> 
+  </div>
 </main>
 
-<Footer />
-
-<style global lang="postcss">@reference "tailwindcss";
-  @reference "tailwindcss";
-  @tailwind utilities;
-  
+<style global lang="postcss">
   main {
     width: 60%;
     margin: auto;
   }
 
+  #main-publics-container {
+    display: block;
+  }
+
   .social-links {
     display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    gap: 0;
+    margin-left: 0;
+    margin-right: auto;
   }
 
   .public-link-image {
+    flex-shrink: 1;
     margin: 1rem 1rem 1rem 0rem;
+  }
+
+  .e-music-public-info {
+    flex-grow: 1;
+    margin-left: 0;
   }
 
   .e-music-public-icon-text {
       text-align: left;
       position: relative;
       bottom: 0;
+      right: 0;
   }
 
   .public-icon {
@@ -164,16 +154,10 @@
       width: 10vw;
   }
 
-  @media (max-width: 1024px) {
-    main {
-      width: 90%;
-      margin: 0 5% 0 5%;
-    }
-
-
-  }
-
   @media (max-width: 640px) {
+    main {
+      width: 90%
+    }
     .social-links {
       display: contents;
     }
